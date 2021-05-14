@@ -7,7 +7,9 @@ html, body, .root, .body{
     --basic-black: #000000;
     --basic-white: #ffffff;
     --basic-gray: #A3A3A3;
+    --basic-light-gray: #E9E9E9;
     --basic-darkblue: #53769A;
+    --basic-dark-darkblue: #456485;
     --github-black: #24292E;
 }
 
