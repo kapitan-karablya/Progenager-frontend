@@ -1,0 +1,27 @@
+.app-header {
+    background-color: var(--basic-white);
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-side-area {
+    height: 100%;
+    margin-right: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+}
+
+.header-title {
+    height: 100%;
+    margin: 0 50px 0 70px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}

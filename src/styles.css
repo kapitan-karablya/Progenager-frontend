@@ -11,6 +11,7 @@ html, body, .root, .body{
     --basic-darkblue: #53769A;
     --basic-dark-darkblue: #456485;
     --github-black: #24292E;
+    --header-button-text: #3F3F3F;
 }
 
 /* Body */
@@ -28,8 +29,14 @@ body{
     line-height: 24px;
     font-weight: 400;
     color: var(--basic-black);
+    display: flex;
+    flex-direction: row;
 }
 
+.body-auth {
+    flex-direction: column;
+
+}
 /* Common selectors */
 
 
@@ -174,3 +181,6 @@ body{
     font-weight: 700;
     color: var(--basic-darkblue);
 }
+
+/* Pages */
+

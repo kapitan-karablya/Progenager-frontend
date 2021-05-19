@@ -11,6 +11,7 @@
 
 .sidebar:hover {
     width: 350px;
+    flex-shrink: 0;
 }
 
 .sidebar:hover .sidebar-item-text {
@@ -34,7 +35,6 @@
 .sidebar-logo-image {
     margin-left: 40px;
 }
-
 
 .sidebar-image {
     width: 100px;
