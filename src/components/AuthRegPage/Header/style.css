@@ -1,0 +1,31 @@
+.auth-reg-header {
+    height: 10%;
+    width: 100%;
+    min-height: 34px;
+    max-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-reg-header-title {
+    font-size: 32px;
+    letter-spacing: -0.045em;
+    white-space: nowrap;
+}
+
+.auth-reg-header-button {
+    height: 70%;
+    max-height: 40px;
+    margin: 60px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--basic-light-gray);
+    font-size: 20px;
+    color: var(--header-button-text);
+    cursor: pointer;
+}

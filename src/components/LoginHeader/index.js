@@ -1,7 +1,7 @@
 import React from "react";
 import './style.css'
 
-class AppHeaderLeftSide extends React.Component {
+class AuthRegHeader extends React.Component {
     render() {
         return (
             <div className="login-header">
@@ -11,4 +11,4 @@ class AppHeaderLeftSide extends React.Component {
     }
 }
 
-export default AppHeaderLeftSide;
+export default AuthRegHeader;

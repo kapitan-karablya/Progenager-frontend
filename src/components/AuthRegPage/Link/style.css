@@ -1,0 +1,6 @@
+.auth-reg-link {
+    margin: 30px 0 50px;
+    font-weight: 700;
+    color: var(--basic-darkblue);
+    white-space: nowrap;
+}

@@ -1,7 +1,5 @@
 //import './App.css';
 import React from "react";
-import Authorization from "./components/Authorization";
-import Registration from "./components/Registration";
 import LoginHeader from "./components/LoginHeader";
 import Sidebar from "./components/Sidebar";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
@@ -10,17 +8,16 @@ import PersonalProjects from "./components/PersonalProjects";
 import CurrentProject from "./components/CurrentProject";
 import PersonalTasks from "./components/PersonalTasks";
 import Teams from "./components/Teams"
+import AuthRegPage from "./components/AuthRegPage";
 
 /*function App() {
     return (
         <div className="body body-auth">
-            <LoginHeader/>
-            <Registration/>
-
+            <AuthRegPage/>
         </div>
     );
-}
-*/
+}*/
+
 function App() {
     return (
         <div className="body">

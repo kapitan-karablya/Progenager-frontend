@@ -1,0 +1,106 @@
+/* Input */
+.auth-reg-input {
+    width: 100%;
+    height: 50px;
+    padding: 0 40px 0 50px;
+    box-sizing: border-box;
+    border: 1px var(--basic-gray) inset;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--basic-black);
+}
+
+.auth-reg-input[type="password"] {
+    line-height: 0;
+    font-size: 22px;
+    letter-spacing: 5px;
+}
+
+.auth-reg-input::placeholder {
+    color: var(--basic-gray);
+    font-size: 18px;
+    letter-spacing: normal;
+}
+
+.auth-reg-input-wrapper {
+    position: relative;
+}
+
+/* Login */
+
+.login-wrapper:before {
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 26px;
+    height: 26px;
+    background-image: url(../../../icons/user.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+/* Password*/
+
+.password-wrapper:before {
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 26px;
+    height: 26px;
+    background-image: url(../../../icons/lock.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.password-control {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 13px;
+    right: 13px;
+}
+
+.visible-password {
+    background-image: url(../../../icons/closed_eye.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.hidden-password {
+    background-image: url(../../../icons/open_eye.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+/* Name */
+
+.auth-reg-input-name {
+    display: flex;
+}
+
+.first-name-input-wrapper {
+    width: 45%;
+}
+
+.last-name-input-wrapper {
+    width: 55%;
+}
+
+
+.first-name-input, .last-name-input {
+    padding: 0 20px;
+}
+
+.first-name-input {
+    border-radius: 5px 0 0 5px;
+}
+
+.last-name-input {
+    border-radius: 0 5px 5px 0;
+}
+
+

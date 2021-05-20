@@ -25,7 +25,7 @@ class Sidebar extends React.Component {
                 <div className='sidebar'>
                     <div className='sidebar-item sidebar-logo'>
                         <div className='sidebar-logo-image'><img src={logo} alt="logo"/></div>
-                        <div className='sidebar-item-text sidebar-logo-text'>rogenager.io</div>
+                        <div className='sidebar-item-text'>rogenager.io</div>
                     </div>
                     {sidebarItems}
                 </div>

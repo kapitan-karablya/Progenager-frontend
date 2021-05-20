@@ -1,25 +1,17 @@
-.github-login-button {
-    background-color: var(--github-black);
-}
-
-.other-authorization-split {
-    margin: 15px auto;
-}
-
-.other-authorization-split {
+.auth-reg-split-line {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.authorization-split-line {
+.split-line-dash {
     width: 150px;
     height: 0;
     border-bottom: 1px solid var(--basic-gray);
 }
 
-.authorization-split-label {
+.split-line-label {
     font-family: 'roboto', sans-serif;
     font-size: 24px;
     line-height: 24px;
