@@ -1,0 +1,7 @@
+.performer-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 50%;
+    background-color: var(--performers-icon);
+}

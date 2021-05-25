@@ -1,0 +1,19 @@
+.task {
+    margin-bottom: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--basic-white);
+    box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.09);
+    border-radius: 4px;
+}
+
+.task-text {
+    margin-bottom: 30px;
+}
+
+.task-attributes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

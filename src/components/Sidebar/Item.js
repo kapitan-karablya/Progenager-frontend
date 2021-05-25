@@ -7,7 +7,7 @@ import Sidebar from "./index";
 class SidebarItem extends React.Component {
     render() {
         /*({createClickHandler, item}) {
-            const clickHandler = createClickHandler(item.text);*/
+            const clickHandler = createClickHandler(item.name);*/
 
         return (
             <div className='sidebar-item'/* onClick={clickHandler}*/>

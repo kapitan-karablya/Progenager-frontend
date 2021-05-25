@@ -1,12 +1,14 @@
 .sidebar {
+    width: 100px;
+    height: 100%;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 100px;
-    height: 100%;
     background-color: var(--basic-darkblue);
     box-sizing: border-box;
     transition: 0.3s linear;
+    z-index: 100;
 }
 
 .sidebar:hover {

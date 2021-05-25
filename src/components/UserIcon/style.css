@@ -1,0 +1,14 @@
+.user-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.user-initials {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--super-light-gray);
+}

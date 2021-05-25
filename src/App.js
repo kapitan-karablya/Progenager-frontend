@@ -3,7 +3,7 @@ import React from "react";
 import LoginHeader from "./components/LoginHeader";
 import Sidebar from "./components/Sidebar";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import Redirect from "react-router-dom/es/Redirect";
+import {Redirect} from "react-router-dom";
 import PersonalProjects from "./components/PersonalProjects";
 import CurrentProject from "./components/CurrentProject";
 import PersonalTasks from "./components/PersonalTasks";

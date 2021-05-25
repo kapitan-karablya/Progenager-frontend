@@ -1,0 +1,25 @@
+.task-column {
+    width: 250px;
+    margin: 0 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.column-title {
+    height: 40px;
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: var(--basic-white);
+    box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.09);
+    border-radius: 4px;
+}
+
+.tasks {
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

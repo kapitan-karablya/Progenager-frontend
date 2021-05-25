@@ -1,7 +1,5 @@
 
 .board {
-    width: 100%;
     flex-grow: 3;
     background-color: var(--basic-light-gray);
-    z-index: -1;
 }

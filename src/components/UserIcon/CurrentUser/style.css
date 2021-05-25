@@ -1,0 +1,12 @@
+.current-user  {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--basic-light-gray);
+    background-color: var(--user-icon-color);
+
+}
