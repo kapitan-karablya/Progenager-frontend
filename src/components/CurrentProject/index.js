@@ -36,7 +36,7 @@ const tasksList = [
                 performers: ["Эльдар Габдеев"],
                 color: '#43A54C'
             }]
-    },{
+    }, {
         id: "1",
         title: "В процессе",
         tasks: [
@@ -62,7 +62,7 @@ const tasksList = [
                 projectId: null,
                 performers: ["Иван Красиков", "Эльдар Габдеев", "Иван Красиков", "Иван Красиков", "Иван Красиков"]
             }]
-    },{
+    }, {
         id: "2",
         title: "Сделано",
         tasks: [
@@ -89,7 +89,7 @@ const tasksList = [
                 performers: ["Иван Красиков"],
                 color: '#A54383',
             }]
-    },{
+    }, {
         id: "3",
         title: "Идеи",
         tasks: [
@@ -167,21 +167,6 @@ class CurrentProject extends React.Component {
 
     };
 
-    handleOnDragEnds = (result) => {
-        const {source, destination} = result;
-        let newState = this.state.columns;
-
-        if (!destination) return;
-        const items = Array.from(this.state.columns);
-        const [reorderedItem] = items.splice(result.source.index, 1);
-        items.splice(result.destination.index, 0, reorderedItem);
-
-        newState = items;
-        this.setState({columns: newState});
-
-    };
-
-
     render() {
         return (
             <AppPage>
@@ -199,7 +184,7 @@ class CurrentProject extends React.Component {
                 <KanbanBoard onDragEnd={this.handleOnDragEnd} id={'board'}>
                     {this.state.columns.map((column, index) => {
                         return (
-                            <TaskColumn id={column.id} title={column.title} index={index} >
+                            <TaskColumn id={column.id} title={column.title} index={index}>
                                 {column.tasks.map((task, index) => {
                                     return (
                                         <Task id={task.id} text={task.name} deadline={task.endTime}

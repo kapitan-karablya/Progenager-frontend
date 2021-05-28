@@ -1,0 +1,107 @@
+.expanding-element {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-left: 24px;
+    background: var(--basic-white);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    user-select: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.constant-part {
+    height: 42px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.element-title {
+    margin-right: 40px;
+}
+
+.hiding-part {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 100px 20px 12px;
+    display: none;
+
+}
+
+.expanding-element-checkbox {
+    display: none;
+}
+
+.expanding-element-checkbox:checked ~ .hiding-part {
+    display:block;
+}
+
+
+.expanding-element-checkbox:checked ~ .constant-part .show-button {
+    transform: rotate(180deg);
+}
+
+
+.description {
+    width: 50%;
+    padding: 5px;
+    margin-right: 20px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: clip;
+    position: relative;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, black 90%, white);
+}
+
+.participants {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    min-width: 40px;
+    white-space: nowrap;
+    align-self: flex-end;
+}
+
+.participants div {
+    margin-right: 10px;
+}
+
+
+.project-status {
+    height: 100%;
+    width: 11%;
+    max-width: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.project-status :last-child {
+    margin-left: auto;
+}
+
+.status-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.status-text {
+    white-space: nowrap;
+}
+
+.complete-text {
+    color: #10BD40;
+    margin-right: 15px;
+}
+
+.in-progress-text {
+    color: #0038FF;
+}

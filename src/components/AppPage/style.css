@@ -1,7 +1,9 @@
 .app-page {
     height: 100%;
-    margin-left: 100px;
+    width: 100%;
+    padding-left: 100px;
     display: flex;
     flex-direction: column;
     flex-grow: 3;
+    box-sizing: border-box;
 }

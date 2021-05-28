@@ -1,0 +1,8 @@
+.elements-list {
+    width: 100%;
+    min-width: 400px;   /*под вопросом*/
+    padding: 50px 70px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}

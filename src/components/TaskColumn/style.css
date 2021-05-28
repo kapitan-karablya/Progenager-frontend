@@ -3,6 +3,11 @@
     margin: 0 25px;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
+}
+
+.task-column:last-of-type {
+    margin-right: 100px;
 }
 
 .column-title {

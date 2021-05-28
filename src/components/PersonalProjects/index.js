@@ -10,8 +10,51 @@ import privacy from "../../icons/project_lock.svg";
 import discussions from "../../icons/discussions.svg";
 import menu from "../../icons/menu.svg";
 import Board from "../Board";
+import ElementsList from "../ElementsList";
+import ExpandingElement from "../ExpandingElement";
+import KanbanBoard from "../Board/Kanban";
+import Task from "../Task";
+import ListLine from "../ExpandingElement/ListLine";
+import ProjectStatus from "../ExpandingElement/ProjectStatus";
+import Description from "../ExpandingElement/Description";
+import Participants from "../ExpandingElement/Participants";
+
+
+const projectsList = [
+    {
+        id: "0",
+        title: "Первый проект",
+        description: "Также как существующая теория позволяет выполнить важные задания по разработке существующих финансовых и административных условий. Есть над чем задуматься: активно развивающиеся страны третьего мира ассоциативно распределены по отраслям. Но элементы политического процесса освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, своевременно верифицированы.",
+        participants: ["Красиков Иван", "Габдеев Эльдар"],
+        completed: true,
+    }, {
+        id: "1",
+        title: "Второй проект",
+        description: "Приятно, граждане, наблюдать, как некоторые особенности внутренней политики лишь добавляют фракционных разногласий и разоблачены. Сделанные на базе интернет-аналитики выводы заблокированы в рамках своих собственных рациональных ограничений.",
+        participants: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
+        completed: false,
+    }, {
+        id: "2",
+        title: "Третий проект",
+        description: "Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: убеждённость некоторых оппонентов требует от нас анализа приоритизации разума над эмоциями. И нет сомнений, что многие известные личности формируют глобальную экономическую сеть и при этом - превращены в посмешище, хотя само их существование приносит несомненную пользу обществу. С учётом сложившейся международной обстановки, перспективное планирование говорит о возможностях направлений прогрессивного развития.",
+        participants: [],
+        completed: false,
+    }, {
+        id: "3",
+        title: "Четвертый проект",
+        description: "Не следует, однако, забывать, что базовый вектор развития выявляет срочную потребность дальнейших направлений развития. Повседневная практика показывает, что глубокий уровень погружения в значительной степени обусловливает важность системы массового участия!",
+        participants: [],
+        completed: true,
+    }
+];
 
 class PersonalProjects extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            projects: projectsList
+        };
+    }
 
     render() {
         return (
@@ -26,7 +69,23 @@ class PersonalProjects extends React.Component {
                     </AppHeaderSideArea>
                 </AppHeader>
                 <Board>
-
+                    <ElementsList>
+                        {this.state.projects.map((project, index) => {
+                            return (
+                                <ExpandingElement id={project.id} title={project.title}
+                                                  description={project.description} participants={project.participants}
+                                                  index={index}>
+                                    <ListLine>
+                                        <div className="project-line">
+                                            <Description description={project.description}/>
+                                            <Participants participants={project.participants}/>
+                                            <ProjectStatus projectIsComplete = {project.completed}/>
+                                        </div>
+                                    </ListLine>
+                                </ExpandingElement>
+                            )
+                        })}
+                    </ElementsList>
                 </Board>
             </AppPage>
         );

@@ -5,7 +5,7 @@ class NewColumnButton extends React.Component {
     render() {
 
         return (
-            <div className='task-column'>
+            <div className='task-column last-column'>
                 <button className="column-title new-column-button">
                     Добавить колонку
                 </button>
