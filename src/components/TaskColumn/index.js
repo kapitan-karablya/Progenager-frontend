@@ -15,7 +15,7 @@ class TaskColumn extends React.Component {
                         </div>
                         <Droppable type={'task'} droppableId={this.props.id}>
                             {(provided) => (
-                                <ul className="tasks" {...provided.droppableProps} ref={provided.innerRef}>
+                                <ul className="tasks custom-scroll" {...provided.droppableProps} ref={provided.innerRef}>
                                     {this.props.children}
                                     {provided.placeholder}
                                 </ul>

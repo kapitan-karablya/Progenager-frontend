@@ -1,6 +1,6 @@
 .elements-list {
     width: 100%;
-    min-width: 400px;   /*под вопросом*/
+    min-width: 500px;   /*под вопросом*/
     padding: 50px 70px;
     display: flex;
     flex-direction: column;

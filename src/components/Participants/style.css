@@ -1,0 +1,17 @@
+.participants {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-width: 40px;
+    white-space: nowrap;
+}
+
+
+.participants div {
+    margin-right: 10px;
+}
+
+.no-participants {
+    color: #C4C4C4;
+}

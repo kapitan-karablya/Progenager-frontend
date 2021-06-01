@@ -1,6 +1,5 @@
 import React from "react";
 import './style.css'
-
 import Authorization from "./Authorization.js";
 import Registration from "./Registration.js";
 import AuthRegHeader from "./Header";
@@ -31,6 +30,5 @@ class AuthRegPage extends React.Component {
         );
     }
 }
-
 
 export default AuthRegPage;

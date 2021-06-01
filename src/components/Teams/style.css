@@ -1,0 +1,13 @@
+.projects-wrapper {
+    margin-left: 20px;
+}
+
+.members-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.members-title {
+    margin-right: 20px;
+
+}

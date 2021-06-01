@@ -1,0 +1,183 @@
+.modal-background {
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.modal {
+    z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    background-color: white;
+    border: 1px solid #6F6F6F;
+    box-sizing: border-box;
+    border-radius: 6px;
+    transform: translate(-50%, -50%);
+}
+
+/* Common elements */
+
+.modal-close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    background-image: url("../../icons/close.svg");
+    cursor: pointer;
+}
+
+.modal-button {
+    background-color: #673AB7;
+    border-radius: 5px;
+    color: white;
+    padding: 7px 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.modal-label {
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.modal-long-label {
+    width: 240px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.modal-input {
+    color: #6F6F6F;
+    border: none;
+}
+
+.modal-input:focus {
+    outline: none;
+}
+
+.modal-input::placeholder {
+    color: #C4C4C4;
+}
+
+.modal-save-button {
+    margin: auto;
+}
+
+.change-button {
+    margin-left: auto;
+}
+
+/* Modal Form */
+
+.modal-form {
+    width: 500px;
+    padding: 25px 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form title */
+
+.modal-title {
+    height: 100%;
+    display: block;
+    border-bottom: 3px dashed #A3A3A3;
+    margin-bottom: 32px;
+}
+
+.title-input {
+    width: 100%;
+    font-size: 30px;
+}
+
+.title-textarea {
+    width: 100%;
+    font-size: 24px;
+    resize: none;
+}
+
+/* Form description */
+
+
+.modal-description {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.description-textarea {
+    width: 100%;
+    height: 100px;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    border-bottom: 3px dashed #A3A3A3;
+    resize: none;
+}
+
+/* Form participants */
+
+.modal-participants {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-participants-icons {
+    width: 240px;
+}
+
+
+/* Form methodology */
+
+.modal-development-methodology {
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.methodology-radio-button {
+    width: 180px;
+    height: 31px;
+    margin-left: auto;
+    display: flex;
+    border: 1px solid #673AB7;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.methodology-radio-input {
+    display: none;
+}
+
+.methodology-radio-input:checked+.methodology-radio-label {
+    background-color: #673AB7;
+    color: white;
+}
+
+.methodology-radio-label {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Date */
+.date-input {
+    width: 100%;
+    margin-left: auto;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    border-bottom: 3px dashed #A3A3A3;
+}

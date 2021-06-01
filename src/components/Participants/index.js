@@ -11,13 +11,15 @@ class Participants extends React.Component {
     render() {
         const {width, participants} = this.props;
 
+        if (participants === undefined || participants.length === 0)
+            return (
+                <div className="participants">
+                    <span className="no-participants">Добавьте участников</span>
+                </div>
+            );
+
         const displayedParticipantsCount = Math.floor(width / 40);
         const isAllParticipantsDisplayed = participants.length <= displayedParticipantsCount;
-
-        if (participants.length === 0)
-            return (
-                <div className="participants"><span>{'\u2013'}</span></div>
-            );
 
         return (
             <div className="participants">

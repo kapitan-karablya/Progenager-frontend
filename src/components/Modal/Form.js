@@ -1,14 +1,15 @@
 import React from "react";
 import './style.css'
 
-class Board extends React.Component {
+class ModalForm extends React.Component {
+
     render() {
         return (
-            <div className="board custom-scroll">
+            <form className="modal-form">
                 {this.props.children}
-            </div>
+            </form>
         );
     }
 }
 
-export default Board;
+export default ModalForm;

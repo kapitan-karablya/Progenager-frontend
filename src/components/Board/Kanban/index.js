@@ -2,6 +2,8 @@ import React from "react";
 import './style.css'
 import Board from "..";
 import {DragDropContext, Droppable} from 'react-beautiful-dnd';
+import SimpleBar from 'simplebar-react';
+import "simplebar/dist/simplebar.min.css";
 
 class KanbanBoard extends React.Component {
     render() {
@@ -15,6 +17,7 @@ class KanbanBoard extends React.Component {
                                 {provided.placeholder}
                             </div>
                         )}
+
                     </Droppable>
                 </DragDropContext>
             </Board>

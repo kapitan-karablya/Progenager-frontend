@@ -1,9 +1,11 @@
 .task-column {
-    width: 250px;
-    margin: 0 25px;
+    width: 270px;
+    margin: 0 20px;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
+
+
 }
 
 .task-column:last-of-type {
@@ -13,18 +15,45 @@
 .column-title {
     height: 40px;
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    position: relative;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
     background-color: var(--basic-white);
     box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.09);
     border-radius: 4px;
+    margin-right: 20px;
+
 }
 
 .tasks {
     height: 100%;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0 10px 0 0;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.tasks:before {
+    content: "";
+    height: 20px;
+    width: 250px;
+    position: fixed;
+    background: linear-gradient(to bottom, var(--basic-light-gray) , transparent 20px);
+}
+
+.tasks:after {
+    content: "";
+    height: 20px;
+    width: 250px;
+    bottom: 10px;
+    position: fixed;
+    background: linear-gradient(to bottom, transparent, var(--basic-light-gray) 20px );
+
+}
+
+.tasks .task:first-of-type {
+    margin-top: 20px;
 }

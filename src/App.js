@@ -21,7 +21,6 @@ import AuthRegPage from "./components/AuthRegPage";
 function App() {
     return (
         <div className="body">
-
             <BrowserRouter>
                 <Sidebar/>
                 <Switch>

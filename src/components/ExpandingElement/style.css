@@ -45,35 +45,38 @@
     transform: rotate(180deg);
 }
 
+.line-text {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
 
 .description {
     width: 50%;
     padding: 5px;
     margin-right: 20px;
+    display: flex;
+    align-items: center;
     white-space: nowrap;
     overflow-x: hidden;
     text-overflow: clip;
     position: relative;
     color: transparent;
     -webkit-background-clip: text;
-    background-image: linear-gradient(to right, black 90%, white);
+    background-image: linear-gradient(to right, black 80%, white);
 }
 
-.participants {
-    height: 100%;
+
+.list-line .participants {
     width: 20%;
+}
+
+.task-date {
+    width: 10%;
     display: flex;
     align-items: center;
-    flex-shrink: 0;
-    min-width: 40px;
-    white-space: nowrap;
-    align-self: flex-end;
 }
-
-.participants div {
-    margin-right: 10px;
-}
-
 
 .project-status {
     height: 100%;

@@ -13,7 +13,7 @@ import logo from '../../icons/logo.svg'
 const sidebarItemsOptions = [
     {text: 'Проекты', image: projects, href: '/projects'},
     {text: 'Текущий проект', image: current_project, href: '/project'},
-    {text: 'Задачи', image: tasks, href: '/columns'},
+    {text: 'Задачи', image: tasks, href: '/tasks'},
     {text: 'Команды', image: teams, href: '/teams'},
 ];
 

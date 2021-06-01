@@ -8,12 +8,12 @@ class Input extends React.Component {
             <input className={"auth-reg-input " + this.props.className}
                    type={this.props.type}
                    placeholder={this.props.placeholder}
-                   name={this.props.name}
+                   name={this.props.title}
             />
         );
     }
 }
 
-Input.defaultProps = {type: "Text", placeholder: "", name: null, className: ""};
+Input.defaultProps = {type: "Text", placeholder: "", title: null, className: ""};
 
 export default Input;
