@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.css";
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd";
+import NewTaskButton from "./NewTaskButton";
+import ColumnTitle from "./ColumnTitle";
 
 class TaskColumn extends React.Component {
     render() {
@@ -10,17 +12,20 @@ class TaskColumn extends React.Component {
                 {(provided, snapshot) => (
                     <div className='task-column'
                          ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} >
-                        <div className="column-title">
-                            {this.props.title}
-                        </div>
+                        <ColumnTitle title={this.props.title}>
+
+                        </ColumnTitle>
                         <Droppable type={'task'} droppableId={this.props.id}>
                             {(provided) => (
-                                <ul className="tasks custom-scroll" {...provided.droppableProps} ref={provided.innerRef}>
-                                    {this.props.children}
-                                    {provided.placeholder}
-                                </ul>
+
+                                    <ul className="tasks custom-scroll" {...provided.droppableProps}
+                                        ref={provided.innerRef}>
+                                        {this.props.children}
+                                        {provided.placeholder}
+                                    </ul>
                             )}
                         </Droppable>
+                        <NewTaskButton/>
                     </div>
                 )}
             </Draggable>

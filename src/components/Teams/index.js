@@ -18,7 +18,7 @@ import Participants from "../Participants";
 import ElementsList from "../ElementsList";
 import ProjectStatus from "../ExpandingElement/ProjectStatus";
 import Modal from "../Modal";
-import NewColumnModal from "../Modal/Project";
+import ProjectModal from "../Modal/Project";
 
 
 const projectsList = [
@@ -49,24 +49,28 @@ const projectsList = [
     }
 ];
 
-const teamsList = [{
+const teamsList = [
+    {
     id: "285783",
     members: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
     projects: [
         {
+            id: "1",
             title: "Первый проекет",
             description: "Описание проекта",
-            performers: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
+            participants: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
             completed: true,
         }, {
+            id: "2",
             title: "Второй проект",
             description: "Описание проекта",
-            performers: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
+            participants: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
             completed: false,
         }, {
+            id: "3",
             title: "Третий проект",
             description: "Описание проекта",
-            performers: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
+            participants: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
             completed: false,
         }
     ],
@@ -75,9 +79,10 @@ const teamsList = [{
     members: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
     projects: [
         {
+            id: "4",
             title: "Первый проекет",
             description: "Описание проекта",
-            performers: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
+            participants: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
             completed: true,
         }
     ],
@@ -86,9 +91,10 @@ const teamsList = [{
     members: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
     projects: [
         {
+            id: "5",
             title: "Третий проект",
             description: "Описание проекта",
-            performers: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
+            participants: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
             completed: false,
         }
     ],
@@ -99,8 +105,24 @@ class Teams extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            teams: teamsList
+            teams: teamsList,
+            isProjectModalOpen: false,
+            modalProjectID: null,
+            modalTeamId: null
         };
+    }
+
+    getProjectData(teamId, projectId) {
+        const team = this.state.teams.find(team => team.id === teamId);
+        return team === undefined ? undefined : team.projects.find(project => project.id === projectId)
+    }
+
+    openModal(teamId, projectId) {
+        this.setState({ isProjectModalOpen: true, modalProjectID: projectId, modalTeamId: teamId })
+    }
+
+    closeModal() {
+        this.setState({ isProjectModalOpen: false })
     }
 
     render() {
@@ -128,7 +150,7 @@ class Teams extends React.Component {
                                     <div className="projects-wrapper">
                                         {team.projects.map((project) => {
                                             return (
-                                                <ListLine>
+                                                <ListLine onClick={() => this.openModal(team.id, project.id)}>
                                                     <Text title={project.title}/>
                                                     <Description description={project.description}/>
                                                     <ProjectStatus isComplete={project.completed}/>
@@ -140,8 +162,9 @@ class Teams extends React.Component {
                             )
                         })}
                     </ElementsList>
-                    <NewColumnModal/>
                 </Board>
+                <ProjectModal project={this.getProjectData(this.state.modalTeamId, this.state.modalProjectID)}
+                              isOpen={this.state.isProjectModalOpen} onClose={() => this.closeModal()}/>
             </AppPage>
         );
     }

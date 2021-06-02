@@ -18,6 +18,7 @@ import TaskColumn from "../TaskColumn";
 import Task from "../Task";
 import CurrentUser from "../UserIcon/CurrentUser";
 import NewColumnButton from "../TaskColumn/NewColumnButton";
+import NewTaskButton from "../TaskColumn/NewTaskButton";
 
 const tasksList = [
     {
@@ -194,7 +195,6 @@ class CurrentProject extends React.Component {
                             </TaskColumn>
                         )
                     })}
-                    <NewColumnButton/>
                     <CurrentUser name={"Иван Красиков"}>
 
                     </CurrentUser>

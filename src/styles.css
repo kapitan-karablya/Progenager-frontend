@@ -30,7 +30,7 @@ body{
 .body {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 22px;
     font-weight: 400;
     color: var(--basic-black);
     display: flex;
