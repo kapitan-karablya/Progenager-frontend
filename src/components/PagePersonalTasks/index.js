@@ -4,7 +4,7 @@ import AppPage from "../AppPage";
 import AppHeader from "../AppHeader";
 import AppHeaderSideArea from "../AppHeader/SideArea";
 import AppHeaderTitle from "../AppHeader/Title";
-import HeaderButton from "../HeaderButton";
+import HeaderButton from "../AppHeader/Button";
 import invite from "../../icons/add_users.svg";
 import privacy from "../../icons/project_lock.svg";
 import discussions from "../../icons/discussions.svg";

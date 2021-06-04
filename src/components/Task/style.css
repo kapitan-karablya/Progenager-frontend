@@ -1,11 +1,12 @@
 .task {
     margin-bottom: 20px;
-    padding: 24px;
+    padding: 20px 15px;
     display: flex;
     flex-direction: column;
     background-color: var(--basic-white);
     box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.09);
     border-radius: 4px;
+    font-size: 14px;
 }
 
 .task-text {

@@ -1,7 +1,7 @@
 
 .board {
     width: 100%;
-    margin-top: 60px;
+    margin-top: 50px;
     flex-grow: 3;
     background-color: var(--basic-light-gray);
     box-sizing: border-box;

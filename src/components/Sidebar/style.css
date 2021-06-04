@@ -1,5 +1,5 @@
 .sidebar {
-    width: 100px;
+    width: 80px;
     height: 100%;
     position: fixed;
     display: flex;
@@ -12,12 +12,12 @@
 }
 
 .sidebar:hover {
-    width: 350px;
+    width: 300px;
     flex-shrink: 0;
 }
 
 .sidebar:hover .sidebar-item-text {
-    width: 200px;
+    width: 220px;
 }
 
 .sidebar-item {
@@ -35,11 +35,11 @@
 }
 
 .sidebar-logo-image {
-    margin-left: 40px;
+    margin-left: 30px;
 }
 
 .sidebar-image {
-    width: 100px;
+    width: 80px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@
     overflow: hidden;
     white-space: nowrap;
     color: var(--basic-light-gray);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
 }
 

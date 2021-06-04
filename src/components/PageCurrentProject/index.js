@@ -6,7 +6,7 @@ import './style.css'
 import AppHeader from "../AppHeader";
 import AppHeaderSideArea from "../AppHeader/SideArea.js";
 import AppHeaderTitle from "../AppHeader/Title.js";
-import HeaderButton from "../HeaderButton";
+import HeaderButton from "../AppHeader/Button";
 import KanbanBoard from "../Board/Kanban";
 import AppPage from "../AppPage";
 

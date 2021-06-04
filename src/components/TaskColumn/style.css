@@ -1,5 +1,5 @@
 .task-column {
-    width: 270px;
+    width: 240px;
     max-height: 100%;
     margin: 0 20px;
     display: flex;
@@ -13,8 +13,8 @@
 .task-column:before {
     content: "";
     height: 20px;
-    width: 255px;
-    top: 70px;
+    width: 225px;
+    top: 65px;
     left: 5px;
     position: absolute;
     background: linear-gradient(to bottom, var(--basic-light-gray), transparent 20px);
@@ -24,7 +24,7 @@
 .task-column:after {
     content: "";
     height: 20px;
-    width: 260px;
+    width: 225px;
     bottom: 40px;
     left: 5px;
     position: absolute;
@@ -37,7 +37,7 @@
 }
 
 .column-title {
-    height: 40px;
+    height: 35px;
     display: flex;
     margin-bottom: 30px;
     position: relative;
@@ -48,7 +48,6 @@
     box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.09);
     border-radius: 4px;
     margin-right: 20px;
-
 }
 
 .tasks {
@@ -63,7 +62,7 @@
     width: 200px;
     position: relative;
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     background: none;
     border: none;
     color: var(--basic-gray);
@@ -75,20 +74,23 @@
     content: "";
     height: 15px;
     width: 15px;
-    top: 5px;
+    top: 3px;
     left: 10px;
     position: absolute;
     background-image: url(../../icons/plus.svg);
 }
 
-
 .new-column-button {
-    width: 250px;
+    width: 220px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     color: var(--new-column);
     border: none;
+    cursor: pointer;
+}
+
+.column-title-button {
     cursor: pointer;
 }
 
@@ -111,22 +113,30 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 400;
+    text-align:center;
+    text-indent: 50px;
+    padding: 0;
 
 }
 
 .column-title-save-button {
+    padding: 0;
     width: 20px;
     height: 20px;
+    flex-shrink: 0;
+    background-position: center;
     background-repeat: no-repeat;
-    background-image: url(../../icons/plus.svg);
+    background-image: url(../../icons/column_edit_save.svg);
     cursor: pointer;
 }
 
 .column-title-close-button {
+    padding: 0;
     width: 20px;
     height: 20px;
+    flex-shrink: 0;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(../../icons/close.svg);
+    background-image: url(../../icons/column_edit_cancel.svg);
     cursor: pointer;
 }

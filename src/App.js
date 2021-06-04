@@ -4,10 +4,10 @@ import LoginHeader from "./components/LoginHeader";
 import Sidebar from "./components/Sidebar";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {Redirect} from "react-router-dom";
-import PersonalProjects from "./components/PersonalProjects";
-import CurrentProject from "./components/CurrentProject";
-import PersonalTasks from "./components/PersonalTasks";
-import Teams from "./components/Teams"
+import PersonalProjects from "./components/PagePersonalProjects";
+import CurrentProject from "./components/PageCurrentProject";
+import PersonalTasks from "./components/PagePersonalTasks";
+import Teams from "./components/PageTeams"
 import AuthRegPage from "./components/AuthRegPage";
 
 /*function App() {
