@@ -9,7 +9,7 @@ class Performer extends React.Component {
         if (this.props.performers === null)
             return null;
         else if (!this.props.performers[1])
-            performer = this.props.performers[0].replace(/(.).+ (.).+/, '$1$2');
+            performer = this.props.performers[0];
         else
             performer = this.props.performers.length;
         return (

@@ -20,7 +20,7 @@ class ProjectModal extends React.Component {
                 completed: undefined,
             } : this.props.project;
         return (
-            <Modal isOpen={this.props.isOpen} onClose={this.props.onClose}>
+            <Modal isOpen={this.props.isOpen} onClose={this.props.onClose} isCentral={true}>
                 <ModalForm>
                     <ModalTitle placeholder={"Название проекта"} title={project.title}/>
                     <ModalDescription placeholder={"Введите описание проекта"} description={project.description}/>

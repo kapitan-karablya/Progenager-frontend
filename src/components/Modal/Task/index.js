@@ -21,7 +21,7 @@ class TaskModal extends React.Component {
                 participants: undefined,
             } : this.props.task;
         return (
-            <Modal isOpen={this.props.isOpen} onClose={this.props.onClose}>
+            <Modal isOpen={this.props.isOpen} onClose={this.props.onClose} isCentral={true}>
                 <ModalForm>
                     <ModalTitle placeholder={"Текст задачи"} title={task.title}/>
 

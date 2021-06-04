@@ -1,12 +1,18 @@
-.current-user  {
+.current-user-wrapper {
     width: 60px;
     height: 60px;
     position: fixed;
     bottom: 30px;
     right: 30px;
+}
+
+.current-user  {
+    width: 60px;
+    height: 60px;
     font-size: 24px;
     border-radius: 50%;
     border: 2px solid var(--basic-light-gray);
     background-color: var(--user-icon-color);
-
+    cursor: pointer;
+    user-select: none;
 }

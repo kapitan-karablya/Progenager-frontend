@@ -10,7 +10,7 @@
     box-shadow: 0 8px 5px 5px var(--basic-light-gray);
 }
 
-.task-column:before {
+.task-column:after {
     content: "";
     height: 20px;
     width: 225px;
@@ -18,18 +18,16 @@
     left: 5px;
     position: absolute;
     background: linear-gradient(to bottom, var(--basic-light-gray), transparent 20px);
-    z-index: 1;
 }
 
-.task-column:after {
+.new-task-button:after {
     content: "";
     height: 20px;
     width: 225px;
-    bottom: 40px;
+    top: -30px;
     left: 5px;
     position: absolute;
     background: linear-gradient(to bottom, transparent, var(--basic-light-gray) 20px);
-    z-index: 1;
 }
 
 .task-column:last-of-type {

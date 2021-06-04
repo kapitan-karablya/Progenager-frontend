@@ -195,9 +195,6 @@ class CurrentProject extends React.Component {
                             </TaskColumn>
                         )
                     })}
-                    <CurrentUser name={"Иван Красиков"}>
-
-                    </CurrentUser>
                 </KanbanBoard>
             </AppPage>
         );

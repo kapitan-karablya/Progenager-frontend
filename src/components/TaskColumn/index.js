@@ -12,9 +12,7 @@ class TaskColumn extends React.Component {
                 {(provided, snapshot) => (
                     <div className='task-column'
                          ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} >
-                        <ColumnTitle title={this.props.title}>
-
-                        </ColumnTitle>
+                        <ColumnTitle title={this.props.title}/>
                         <Droppable type={'task'} droppableId={this.props.id}>
                             {(provided) => (
 
