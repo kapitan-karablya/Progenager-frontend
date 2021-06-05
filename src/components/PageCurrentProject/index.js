@@ -16,7 +16,7 @@ import discussions from '../../icons/discussions.svg';
 import menu from '../../icons/menu.svg';
 import TaskColumn from "../TaskColumn";
 import Task from "../Task";
-import CurrentUser from "../UserIcon/CurrentUser";
+import CurrentUser from "../UserIcon/Current";
 import NewColumnButton from "../TaskColumn/NewColumnButton";
 import NewTaskButton from "../TaskColumn/NewTaskButton";
 

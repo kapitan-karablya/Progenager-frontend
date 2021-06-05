@@ -5,11 +5,10 @@ class UserIcon extends React.Component {
 
     render() {
         let initials;
-        {
-            isNaN(this.props.text)
-                ? initials = this.props.text.replace(/(.).+ (.).+/, '$1$2')
-                : initials = "+" + this.props.text
-        }
+        isNaN(this.props.text)
+            ? initials = this.props.text.replace(/(.).+ (.).+/, '$1$2')
+            : initials = "+" + this.props.text;
+
         return (
             <div className="user-icon">
                 <div className="user-initials">

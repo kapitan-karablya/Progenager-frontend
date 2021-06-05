@@ -7,6 +7,7 @@ import ModalDescription from "../Description";
 import ModalParticipants from "../Participants";
 import ModalMethodology from "../Methodology";
 import ModalSaveButton from "../SaveButton";
+import FixedTypeModal from "../FixedType";
 
 class ProjectModal extends React.Component {
 
@@ -20,7 +21,7 @@ class ProjectModal extends React.Component {
                 completed: undefined,
             } : this.props.project;
         return (
-            <Modal isOpen={this.props.isOpen} onClose={this.props.onClose} isCentral={true}>
+            <FixedTypeModal isOpen={this.props.isOpen} onClose={this.props.onClose}>
                 <ModalForm>
                     <ModalTitle placeholder={"Название проекта"} title={project.title}/>
                     <ModalDescription placeholder={"Введите описание проекта"} description={project.description}/>
@@ -28,7 +29,7 @@ class ProjectModal extends React.Component {
                     <ModalMethodology/>
                     <ModalSaveButton/>
                 </ModalForm>
-            </Modal>
+            </FixedTypeModal>
         );
     }
 }

@@ -10,27 +10,26 @@ import ModalSaveButton from "../SaveButton";
 import UserAccountButton from "./Button";
 import DividingLine from "./DividingLine";
 import UserProfile from "./UserProfile";
+import AbsoluteTypeModal from "../AbsoluteType";
 
-class UserAccount extends React.Component {
+class UserAccountModal extends React.Component {
 
     render() {
         return (
-            <div className="user-account-modal">
-                <Modal isOpen={this.props.isOpen} onClose={this.props.onClose}>
-                    <div className="user-account-modal-content">
-                        <div className="user-account-title">Учетная запись</div>
-                        <DividingLine/>
-                        <UserProfile name="Иван Красиков"/>
-                        <UserAccountButton text="Изменить имя"/>
-                        <UserAccountButton text="Изменить логин"/>
-                        <UserAccountButton text="Изменить пароль"/>
-                        <DividingLine/>
-                        <UserAccountButton text="Выйти"/>
-                    </div>
-                </Modal>
-            </div>
+            <AbsoluteTypeModal isOpen={this.props.isOpen} changeModalState={this.props.changeModalState} clickSource={this.props.clickSource}>
+                <div className="user-account-modal-content">
+                    <div className="user-account-title">Учетная запись</div>
+                    <DividingLine/>
+                    <UserProfile name="Иван Красиков"/>
+                    <UserAccountButton text="Изменить имя"/>
+                    <UserAccountButton text="Изменить логин"/>
+                    <UserAccountButton text="Изменить пароль"/>
+                    <DividingLine/>
+                    <UserAccountButton text="Выйти"/>
+                </div>
+            </AbsoluteTypeModal>
         );
     }
 }
 
-export default UserAccount;
+export default UserAccountModal;
