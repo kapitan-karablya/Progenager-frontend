@@ -10,11 +10,12 @@
 }
 
 .task-text {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .task-attributes {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-end;
 }

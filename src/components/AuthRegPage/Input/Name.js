@@ -11,14 +11,18 @@ class InputName extends React.Component {
                     <Input className="first-name-input"
                            type="text"
                            placeholder="Имя"
-                           name="First-name"
+                           name="first-name"
+                           value={this.props.firstName}
+                           onBlur={this.props.onBlur}
                     />
                 </div>
                 <div className="auth-reg-input-wrapper last-name-input-wrapper">
                     <Input className="last-name-input"
                            type="text"
                            placeholder="Фамилия"
-                           name="Last-name"
+                           name="last-name"
+                           value={this.props.lastName}
+                           onBlur={this.props.onBlur}
                     />
                 </div>
             </div>

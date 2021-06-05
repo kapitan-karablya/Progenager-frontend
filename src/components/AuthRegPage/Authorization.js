@@ -10,6 +10,15 @@ import Item from "./Item";
 
 
 class Authorization extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            login: null,
+            password: null,
+            firstName: null,
+            lastName: null
+        };
+    }
 
     render() {
         return (
@@ -32,7 +41,7 @@ class Authorization extends React.Component {
                     <SplitLine/>
                 </Item>
                 <Item>
-                    <Button className="github-login-button"/>
+                    <Button className="github-login-button" text="Войти через GitHub"/>
                 </Item>
             </div>
         );

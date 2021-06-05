@@ -10,15 +10,15 @@ import PersonalTasks from "./components/PagePersonalTasks";
 import Teams from "./components/PageTeams"
 import AuthRegPage from "./components/AuthRegPage";
 
-/*function App() {
+function App() {
     return (
         <div className="body body-auth">
             <AuthRegPage/>
         </div>
     );
-}*/
+}
 
-function App() {
+/*function App() {
     return (
         <div className="body">
             <BrowserRouter>
@@ -33,6 +33,6 @@ function App() {
             </BrowserRouter>
         </div>
     );
-}
+}*/
 
 export default App;

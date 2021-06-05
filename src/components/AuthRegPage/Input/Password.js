@@ -20,7 +20,10 @@ class InputPassword extends React.Component {
             <div className="auth-reg-input-wrapper password-wrapper">
                 <Input type={isPasswordShow ? "text" : "password"}
                        placeholder="Пароль"
-                       name="Password"/>
+                       name="password"
+                       value={this.props.password}
+                       onBlur={this.props.onBlur}
+                />
                 <div className={`${isPasswordShow ? "visible-password" : "hidden-password"} password-control`}
                      onClick={this.togglePasswordVisibility}
                 />

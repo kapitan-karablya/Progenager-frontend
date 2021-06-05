@@ -9,6 +9,7 @@ import ModalMethodology from "../Methodology";
 import ModalSaveButton from "../SaveButton";
 import ModalDate from "../Date";
 import SimpleBar from 'simplebar-react';
+import FixedTypeModal from "../FixedType";
 
 class TaskModal extends React.Component {
 
@@ -21,7 +22,7 @@ class TaskModal extends React.Component {
                 participants: undefined,
             } : this.props.task;
         return (
-            <Modal isOpen={this.props.isOpen} onClose={this.props.onClose} isCentral={true}>
+            <FixedTypeModal isOpen={this.props.isOpen} onClose={this.props.onClose} isCentral={true}>
                 <ModalForm>
                     <ModalTitle placeholder={"Текст задачи"} title={task.title}/>
 
@@ -30,7 +31,7 @@ class TaskModal extends React.Component {
                     <ModalDate/>
                     <ModalSaveButton/>
                 </ModalForm>
-            </Modal>
+            </FixedTypeModal>
         );
     }
 }

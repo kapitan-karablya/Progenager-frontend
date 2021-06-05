@@ -9,7 +9,9 @@ class InputLogin extends React.Component {
             <div className="auth-reg-input-wrapper login-wrapper">
                 <Input type="text"
                        placeholder="Логин"
-                       name="Login"/>
+                       name="login"
+                       value={this.props.login}
+                       onBlur={this.props.onBlur}/>
             </div>
         );
     }

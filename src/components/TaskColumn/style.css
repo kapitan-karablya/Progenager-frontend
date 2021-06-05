@@ -1,6 +1,7 @@
 .task-column {
     width: 240px;
     max-height: 100%;
+    min-height: 400px;
     margin: 0 20px;
     display: flex;
     flex-direction: column;
@@ -28,10 +29,6 @@
     left: 5px;
     position: absolute;
     background: linear-gradient(to bottom, transparent, var(--basic-light-gray) 20px);
-}
-
-.task-column:last-of-type {
-    margin-right: 100px;
 }
 
 .column-title {
@@ -86,6 +83,7 @@
     color: var(--new-column);
     border: none;
     cursor: pointer;
+    margin: 0 20px;
 }
 
 .column-title-button {
@@ -107,13 +105,14 @@
 }
 
 .column-title-input {
-    width: 200px;
+    width: 180px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     text-align:center;
-    text-indent: 50px;
+    text-indent: 40px;
     padding: 0;
+    outline: none;
 
 }
 

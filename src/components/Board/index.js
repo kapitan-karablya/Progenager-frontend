@@ -8,8 +8,8 @@ class Board extends React.Component {
 
     render() {
         return (
-            <div className="board-wrapper custom-scroll">
-                <div className="board">
+            <div className="board-wrapper">
+                <div className="board custom-scroll">
                     {this.props.children}
                 </div>
                     <CurrentUser name={"Иван Красиков"}/>

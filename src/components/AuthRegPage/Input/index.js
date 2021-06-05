@@ -8,7 +8,9 @@ class Input extends React.Component {
             <input className={"auth-reg-input " + this.props.className}
                    type={this.props.type}
                    placeholder={this.props.placeholder}
-                   name={this.props.title}
+                   name={this.props.name}
+                   value={this.props.value}
+                   onBlur={this.props.onBlur}
             />
         );
     }

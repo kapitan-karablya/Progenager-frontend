@@ -5,7 +5,7 @@
     flex-grow: 3;
     margin-top: 50px;
     display: flex;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 
@@ -14,5 +14,6 @@
     background-color: var(--basic-light-gray);
     box-sizing: border-box;
     display: flex;
+    overflow: scroll;
 }
 

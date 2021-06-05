@@ -5,7 +5,7 @@ class ModalSaveButton extends React.Component {
 
     render() {
         return (
-            <div className="modal-button modal-save-button">Сохранить и закрыть</div>
+            <div className="modal-button modal-save-button" type="submit">Сохранить и закрыть</div>
         );
     }
 }
