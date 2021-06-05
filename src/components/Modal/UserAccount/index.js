@@ -11,8 +11,15 @@ import UserAccountButton from "./Button";
 import DividingLine from "./DividingLine";
 import UserProfile from "./UserProfile";
 import AbsoluteTypeModal from "../AbsoluteType";
+import cookies from "../../../helpers/Coocies";
+
 
 class UserAccountModal extends React.Component {
+
+    logOut() {
+        cookies.remove("access_token");
+        window.location.reload();
+    }
 
     render() {
         return (
@@ -25,7 +32,7 @@ class UserAccountModal extends React.Component {
                     <UserAccountButton text="Изменить логин"/>
                     <UserAccountButton text="Изменить пароль"/>
                     <DividingLine/>
-                    <UserAccountButton text="Выйти"/>
+                    <UserAccountButton text="Выйти" onClick={() => this.logOut()}/>
                 </div>
             </AbsoluteTypeModal>
         );

@@ -10,7 +10,7 @@ class Input extends React.Component {
                    placeholder={this.props.placeholder}
                    name={this.props.name}
                    value={this.props.value}
-                   onBlur={this.props.onBlur}
+                   onChange={this.props.onChange}
             />
         );
     }

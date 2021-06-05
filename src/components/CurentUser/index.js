@@ -26,7 +26,7 @@ class CurrentUser extends React.Component {
         return (
             <div className="current-user" ref={this.setWrapperRef.bind(this)}>
                 <UserAccountModal isOpen={this.state.isUserModalOpen} changeModalState={() => this.changeModalState()}
-                                  clickSource={this.wrapperRef}/>
+                                  clickSource={this.wrapperRef}  update={this.props.update}/>
                 <div className="current-user-icon-wrapper" onClick={() => {
                     this.changeModalState(!this.state.isUserModalOpen);
                 }}>

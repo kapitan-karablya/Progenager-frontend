@@ -22,7 +22,7 @@ class InputPassword extends React.Component {
                        placeholder="Пароль"
                        name="password"
                        value={this.props.password}
-                       onBlur={this.props.onBlur}
+                       onChange={this.props.onChange}
                 />
                 <div className={`${isPasswordShow ? "visible-password" : "hidden-password"} password-control`}
                      onClick={this.togglePasswordVisibility}

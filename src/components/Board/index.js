@@ -12,7 +12,7 @@ class Board extends React.Component {
                 <div className="board custom-scroll">
                     {this.props.children}
                 </div>
-                    <CurrentUser name={"Иван Красиков"}/>
+                    <CurrentUser name={"Иван Красиков"} update={this.props.update}/>
             </div>
         );
     }

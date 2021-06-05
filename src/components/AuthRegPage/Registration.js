@@ -26,9 +26,14 @@ class Registration extends React.Component {
     }
 
     handelSubmit(event) {
-        let response = fetch("https://192.168.1.175:44317/Users/register?login=" + this.state.login + "&password="+this.state.password, {
-            method: "PUT"
-        }).then(response => console.log(response));
+        let response = fetch("https://localhost:44317/Users/register?login=" + this.state.login + "&password="+this.state.password, {
+            method: "PUT",
+            body:{
+                hui: "123"
+            }
+        }).then(response => {
+            console.log(response)
+        });
         console.log(response);
         event.preventDefault();
     }
@@ -41,13 +46,13 @@ class Registration extends React.Component {
                 </Item>
                 <AuthRegForm onSubmit={(e) => this.handelSubmit(e)}>
                     <Item>
-                        <InputName firstName={this.state.firstName} lastName={this.state.lastName} onBlur={(e) => this.changeStateValue(e)}/>
+                        <InputName firstName={this.state.firstName} lastName={this.state.lastName} onChange={(e) => this.changeStateValue(e)}/>
                     </Item>
                     <Item>
-                        <InputLogin login={this.state.login} onBlur={(e) => this.changeStateValue(e)}/>
+                        <InputLogin login={this.state.login} onChange={(e) => this.changeStateValue(e)}/>
                     </Item>
                     <Item>
-                        <InputPassword password={this.state.password} onBlur={(e) => this.changeStateValue(e)}/>
+                        <InputPassword password={this.state.password} onChange={(e) => this.changeStateValue(e)}/>
                     </Item>
                     <Item>
                         <Button type="submit" text="Войти"/>

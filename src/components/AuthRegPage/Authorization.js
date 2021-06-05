@@ -9,15 +9,35 @@ import SplitLine from "./SplitLine";
 import Item from "./Item";
 
 
+
+
 class Authorization extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             login: null,
             password: null,
-            firstName: null,
-            lastName: null
         };
+    }
+
+    changeStateValue(event) {
+        this.setState({ [event.target.name]: event.target.value })
+    }
+
+    handelAuth(event) {
+        let response = fetch("https://localhost:44317/Users/Authenticate?login=" + this.state.login + "&password="+this.state.password, {
+            method: "GET",
+        }).then(response => {
+            
+            response.json().then(json => {
+                console.log(json);
+
+                this.props.cookies.set('access_token', json);
+                alert(this.props.cookies.get('access_token')["access_token"]);
+                this.props.update();
+            })
+        });
+        event.preventDefault();
     }
 
     render() {
@@ -26,12 +46,12 @@ class Authorization extends React.Component {
                 <Item>
                     <h1 className="section-title">Авторизация</h1>
                 </Item>
-                <AuthRegForm>
+                <AuthRegForm onSubmit={(e) => this.handelAuth(e)}>
                     <Item>
-                        <InputLogin/>
+                        <InputLogin login={this.state.login} onChange={(e) => this.changeStateValue(e)}/>
                     </Item>
                     <Item>
-                        <InputPassword/>
+                        <InputPassword password={this.state.password} onChange={(e) => this.changeStateValue(e)}/>
                     </Item>
                     <Item>
                         <Button type="submit" text="Войти"/>

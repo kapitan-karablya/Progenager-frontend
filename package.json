@@ -15,6 +15,7 @@
     "react-sizeme": "^3.0.1",
     "simplebar": "^5.3.3",
     "simplebar-react": "^2.3.3",
+    "universal-cookie": "^4.0.4",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

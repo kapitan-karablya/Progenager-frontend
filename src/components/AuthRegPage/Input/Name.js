@@ -13,7 +13,7 @@ class InputName extends React.Component {
                            placeholder="Имя"
                            name="first-name"
                            value={this.props.firstName}
-                           onBlur={this.props.onBlur}
+                           onChange={this.props.onChange}
                     />
                 </div>
                 <div className="auth-reg-input-wrapper last-name-input-wrapper">
@@ -22,7 +22,7 @@ class InputName extends React.Component {
                            placeholder="Фамилия"
                            name="last-name"
                            value={this.props.lastName}
-                           onBlur={this.props.onBlur}
+                           onChange={this.props.onChange}
                     />
                 </div>
             </div>

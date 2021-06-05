@@ -20,6 +20,7 @@ import Description from "../ExpandingElement/Description";
 import Participants from "../Participants";
 import ProjectModal from "../Modal/Project";
 import SimpleBar from "simplebar-react";
+import cookies from "../../helpers/Coocies";
 
 
 const projectsList = [
@@ -27,7 +28,7 @@ const projectsList = [
         id: "0",
         title: "Первый проект",
         description: "Также как существующая теория позволяет выполнить важные задания по разработке существующих финансовых и административных условий. Есть над чем задуматься: активно развивающиеся страны третьего мира ассоциативно распределены по отраслям. Но элементы политического процесса освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, своевременно верифицированы.",
-        participants: ["Красиков Иван", "Габдеев Эльдар"],
+        members: ["Красиков Иван", "Габдеев Эльдар"],
         completed: true,
     }, {
         id: "1",
@@ -79,13 +80,54 @@ class PersonalProjects extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            projects: projectsList,
+            projects: null,
             isProjectModalOpen: false,
             modalProjectID: null
         };
     }
 
-    getProjectData = id => this.state.projects.find(project => project.id === id);
+    componentDidMount(){
+        let response = fetch("https://localhost:44317/users/GetProjects", {
+            method: "GET",
+            headers:  {
+                Authorization: "Bearer " + cookies.get("access_token")["access_token"]
+              }
+        }).then(response => {
+            
+            response.json().then(json => {
+                let projectsList = json.map((object) => {
+                    return object.project;
+                })
+                
+                this.setState({projects: projectsList});
+                console.log(this.state.projects)
+            })
+        });
+    }
+
+    getUserProjects(event) {
+        let response = fetch("https://localhost:44317/users/GetProjects", {
+            method: "GET",
+            headers:  {
+                Authorization: "Bearer " + cookies.get("access_token")["access_token"]
+              }
+        }).then(response => {
+            
+            response.json().then(json => {
+                let projectsList = json.map((object) => {
+                    return object.project;
+                })
+                
+                this.setState({projects: projectsList});
+                console.log(this.state.projects);
+                this.render()
+            })
+        });
+    }
+
+    getProjectData(id) {
+        if(this.state.projects)
+        return this.state.projects.find(project => project.id === id);}
 
     openModal(projectId) {
         this.setState({ isProjectModalOpen: true, modalProjectID: projectId })
@@ -93,6 +135,21 @@ class PersonalProjects extends React.Component {
 
     closeModal() {
         this.setState({ isProjectModalOpen: false })
+    }
+
+    getProjectsList(){
+        if(this.state.projects)
+           return this.state.projects.map((project, index) => {
+                return (
+                    <ExpandingElement id={project.id} title={project.title} index={index}>
+                        <ListLine onClick={() => this.openModal(project.id)}>
+                            <Description description={project.description}/>
+                            <Participants participants={project.members.map(user => user.firstName + " " + user.lastName)}/>
+                            <ProjectStatus isComplete={project.state}/>
+                        </ListLine>
+                    </ExpandingElement>
+                )
+            })
     }
 
     render() {
@@ -107,23 +164,11 @@ class PersonalProjects extends React.Component {
                         <HeaderButton text="Меню" icon={menu}/>
                     </AppHeaderSideArea>
                 </AppHeader>
-                <Board>
-
+                <Board update={this.props.update}>
                     <ElementsList>
-
-                        {this.state.projects.map((project, index) => {
-                            return (
-                                <ExpandingElement id={project.id} title={project.title} index={index}>
-                                    <ListLine onClick={() => this.openModal(project.id)}>
-                                        <Description description={project.description}/>
-                                        <Participants participants={project.participants}/>
-                                        <ProjectStatus isComplete={project.completed}/>
-                                    </ListLine>
-                                </ExpandingElement>
-                            )
-                        })}
+                        {this.getProjectsList()} 
+                        
                     </ElementsList>
-
                 </Board>
                 <ProjectModal project={this.getProjectData(this.state.modalProjectID)} isOpen={this.state.isProjectModalOpen} onClose={() => this.closeModal()}/>
             </AppPage>

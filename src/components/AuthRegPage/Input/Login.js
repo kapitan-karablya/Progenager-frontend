@@ -11,7 +11,7 @@ class InputLogin extends React.Component {
                        placeholder="Логин"
                        name="login"
                        value={this.props.login}
-                       onBlur={this.props.onBlur}/>
+                       onChange={this.props.onChange}/>
             </div>
         );
     }
