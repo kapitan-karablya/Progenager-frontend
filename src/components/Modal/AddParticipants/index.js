@@ -21,14 +21,18 @@ class AddParticipants extends React.Component {
                         <div className="current-participants">
                             <span className="current-participants-title">Участники</span>
                             <div className="current-participants-list">
-                                {this.props.participants.map((participant) => {
+                                {this.props.participants === undefined ?  null : this.props.participants.map((participant) => {
                                     return (
-                                        <Performer performers={participant.split()}/>
+                                        <Performer performers={participant}/>
                                     )
                                 })}
                             </div>
                         </div>
-                        <input />
+                        <div className="new-participants">
+                            <div className="participants-search">
+                                <input className="participants-search-input" type="search" placeholder="Поиск"/>
+                            </div>
+                        </div>
                     </div>
                 </ModalForm>
             </FixedTypeModal>

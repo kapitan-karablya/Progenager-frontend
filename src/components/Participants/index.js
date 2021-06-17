@@ -9,7 +9,8 @@ class Participants extends React.Component {
 
 
     render() {
-        const {width, participants} = this.props;
+        const width = this.props.width;
+        const participants = this.props.participants;
 
         if (participants === undefined || participants.length === 0)
             return (
@@ -25,10 +26,11 @@ class Participants extends React.Component {
             <div className="participants">
                 {participants.slice(0, (isAllParticipantsDisplayed ? participants.length : displayedParticipantsCount - 1)).map((participant) => {
                     return (
-                        <Performer performers={participant.split()}/>
+                        <Performer performers={participant}/>
                     )
                 })}
                 {!isAllParticipantsDisplayed ?
+
                     <Performer
                         performers={participants.slice(displayedParticipantsCount - 1, participants.length)}/> : null}
             </div>

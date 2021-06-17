@@ -17,7 +17,7 @@ class ProjectModal extends React.Component {
                 id: undefined,
                 title: undefined,
                 description:  undefined,
-                participants: undefined,
+                members: [],
                 completed: undefined,
             } : this.props.project;
         return (
@@ -25,7 +25,7 @@ class ProjectModal extends React.Component {
                 <ModalForm>
                     <ModalTitle placeholder={"Название проекта"} title={project.title}/>
                     <ModalDescription placeholder={"Введите описание проекта"} description={project.description}/>
-                    <ModalParticipants participants={project.participants}/>
+                    <ModalParticipants participants={project.members}/>
                     <ModalMethodology/>
                     <ModalSaveButton/>
                 </ModalForm>

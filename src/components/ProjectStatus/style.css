@@ -1,0 +1,30 @@
+.project-status {
+    height: 100%;
+    width: 100%;
+    max-width: 140px;
+    display: flex;
+    align-items: center;
+}
+
+.project-status :last-child {
+    margin-left: auto;
+}
+
+.status-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.status-text {
+    white-space: nowrap;
+}
+
+.complete-text {
+    color: #10BD40;
+    margin-right: 15px;
+}
+
+.in-progress-text {
+    color: #0038FF;
+}

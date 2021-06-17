@@ -16,7 +16,7 @@ class ProjectStatus extends React.Component {
         return (
             <div className="project-status">
                 <img className="status-icon" src={this.props.isComplete ? complete : in_progress}/>
-                {width > 140 ? (this.props.isComplete
+                {width > 130 ? (this.props.isComplete
                     ? <span className="status-text complete-text">Завершен</span>
                     : <span className="status-text in-progress-text">В процессе</span>) : null}
             </div>

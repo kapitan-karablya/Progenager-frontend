@@ -6,7 +6,7 @@ class ChangeButton extends React.Component {
 
     render() {
         return (
-            <div className="modal-button change-button" onClick={this.props.onClick}  participants={this.props.participants}>Изменить</div>
+            <div className="modal-button change-button" onClick={this.props.onClick}>Изменить</div>
         );
     }
 }

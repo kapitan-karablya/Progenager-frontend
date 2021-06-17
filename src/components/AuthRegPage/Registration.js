@@ -8,7 +8,12 @@ import AuthRegForm from "./Form";
 import SplitLine from "./SplitLine";
 import Item from "./Item";
 import InputName from "./Input/Name";
+import GitHubLoginButton from "./GitHubLoginButton";
 
+
+const CLIENT_ID = "4e343cf0194406a5b63c";
+const REDIRECT_URI = "http://localhost:3000/callback";
+const CLIENT_SECRET = "c10f91d9f61a2269f3754bdbe7c46e6d77adfed3";
 
 class Registration extends React.Component {
     constructor(props) {
@@ -55,9 +60,15 @@ class Registration extends React.Component {
                         <InputPassword password={this.state.password} onChange={(e) => this.changeStateValue(e)}/>
                     </Item>
                     <Item>
-                        <Button type="submit" text="Войти"/>
+                        <Button type="submit" text="Зарегестрироваться"/>
                     </Item>
                 </AuthRegForm>
+                <Item>
+                    <SplitLine/>
+                </Item>
+                <Item>
+                    <GitHubLoginButton client_id={CLIENT_ID} redirect_url={REDIRECT_URI} text="Войти через GitHub"/>
+                </Item>
             </div>
         );
     }

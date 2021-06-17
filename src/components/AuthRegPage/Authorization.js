@@ -1,5 +1,5 @@
 import React from "react";
-
+import xhr from "xhr"
 import './style.css'
 import InputLogin from "./Input/Login.js";
 import InputPassword from "./Input/Password.js";
@@ -7,9 +7,12 @@ import Button from "./Button";
 import AuthRegForm from "./Form";
 import SplitLine from "./SplitLine";
 import Item from "./Item";
+import GitHubLoginButton from "./GitHubLoginButton";
 
 
-
+const CLIENT_ID = "4e343cf0194406a5b63c";
+const REDIRECT_URI = "http://localhost:3000/callback";
+const CLIENT_SECRET = "c10f91d9f61a2269f3754bdbe7c46e6d77adfed3";
 
 class Authorization extends React.Component {
     constructor(props) {
@@ -17,23 +20,46 @@ class Authorization extends React.Component {
         this.state = {
             login: null,
             password: null,
+            client_id: "000",
+            redirect_uri: "jjj",
         };
     }
 
+    componentDidMount() {
+        const code =
+            window.location.href.match(/\?code=(.*)/) &&
+            window.location.href.match(/\?code=(.*)/)[1];
+        if (code) {
+            console.log(code)
+
+            const url = `https://github.com/login/oauth/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&code=${code}`;
+            xhr({
+                url: "https://local-dddd.herokuapp.com/authenticate/" + code,
+                json: true,
+            }, (err, resp, body) => {
+                if (body.error) {
+                    alert("Ошибка авторизации")
+                }
+                else if (body.token) {
+                    this.props.cookies.set('access_token', body.token);
+                    this.props.update();
+                }
+            })
+        }
+    }
+
+
     changeStateValue(event) {
-        this.setState({ [event.target.name]: event.target.value })
+        this.setState({[event.target.name]: event.target.value})
     }
 
     handelAuth(event) {
-        let response = fetch("https://localhost:44317/Users/Authenticate?login=" + this.state.login + "&password="+this.state.password, {
+        let response = fetch("https://localhost:44317/Users/Authenticate?login="
+            + this.state.login + "&password=" + this.state.password, {
             method: "GET",
         }).then(response => {
-            
             response.json().then(json => {
-                console.log(json);
-
                 this.props.cookies.set('access_token', json);
-                alert(this.props.cookies.get('access_token')["access_token"]);
                 this.props.update();
             })
         });
@@ -41,6 +67,7 @@ class Authorization extends React.Component {
     }
 
     render() {
+
         return (
             <div className="authorization">
                 <Item>
@@ -61,7 +88,7 @@ class Authorization extends React.Component {
                     <SplitLine/>
                 </Item>
                 <Item>
-                    <Button className="github-login-button" text="Войти через GitHub"/>
+                    <GitHubLoginButton client_id={CLIENT_ID} redirect_url={REDIRECT_URI} text="Войти через GitHub"/>
                 </Item>
             </div>
         );

@@ -1,0 +1,87 @@
+
+.scrum-board {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 20px 45px 0;
+    box-sizing: border-box;
+}
+
+.kanban-columns {
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+
+}
+
+.kanban-board::after {
+    content:"";
+    width: 1px;
+    flex-shrink: 0;
+}
+
+.vertical-split {
+    height: 80%;
+    margin: 0 30px;
+    border-right: 2px dashed #A3A3A3;
+}
+
+.static-column {
+    margin-top: 50px;
+}
+
+.new-sprint-button {
+    min-width: 40%;
+    display: flex;
+    justify-content: center;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    color: var(--modal-text-color);
+    background: transparent;
+    border: none;
+}
+
+.new-sprint-button-content {
+    margin-top: 50px;
+    display: flex;
+}
+
+.new-sprint-button-span {
+    margin-left: 20px;
+}
+
+.sprint-header {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.sprint-title {
+    color: #6F6F6F;
+    font-size: 32px;
+    margin: 0 auto;
+}
+
+.sprint-close-button {
+    width: 220px;
+    height: 35px;
+    margin: 0 20px 0 auto ;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--basic-darkblue);
+    color: var(--basic-white);
+    border: none;
+    border-radius: 5px;
+
+}
+
+.sprint-columns {
+    display: flex;
+}
+
+.sprint-wrapper {
+    display: flex;
+    flex-direction: column;
+}

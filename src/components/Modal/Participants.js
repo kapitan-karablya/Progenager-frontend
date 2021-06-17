@@ -5,6 +5,7 @@ import Participants from "../Participants";
 import ChangeButton from "./ChangeButton";
 import ProjectModal from "./Project";
 import AddParticipants from "./AddParticipants";
+import FixedTypeModal from "./FixedType";
 
 class ModalParticipants extends React.Component {
     constructor(props) {
@@ -29,7 +30,9 @@ class ModalParticipants extends React.Component {
                 <div className="modal-participants-icons">
                     <Participants participants={this.props.participants}/>
                 </div>
-                <ChangeButton onClick={() => this.openModal()}  participants={this.props.participants}/>
+                <ChangeButton onClick={() => this.openModal()}/>
+                <AddParticipants participants={this.props.participants}
+                                 isOpen={this.state.isParticipantsModalOpen} onClose={() => this.closeModal()}/>
             </div>
         );
     }

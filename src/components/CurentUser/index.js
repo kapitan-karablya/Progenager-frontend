@@ -30,7 +30,7 @@ class CurrentUser extends React.Component {
                 <div className="current-user-icon-wrapper" onClick={() => {
                     this.changeModalState(!this.state.isUserModalOpen);
                 }}>
-                    <CurrentUserIcon name={this.props.name}/>
+                    <CurrentUserIcon name={this.props.name} color={"#A54383"}/>
                 </div>
             </div>
         );

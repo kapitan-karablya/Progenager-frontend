@@ -6,8 +6,22 @@ import ColumnTitle from "./ColumnTitle";
 
 class TaskColumn extends React.Component {
     render() {
-
-        return (
+        return this.props.staticColumn ? (
+            <div className='task-column'>
+                <ColumnTitle title={this.props.title}/>
+                <Droppable type={'task'} droppableId={this.props.id}>
+                    {(provided) => (
+                        <ul className="tasks custom-scroll"
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}>
+                            {this.props.children}
+                            {provided.placeholder}
+                        </ul>
+                    )}
+                </Droppable>
+                <NewTaskButton/>
+            </div>
+        ) : (
             <Draggable type={'column'} key={this.props.id} draggableId={this.props.id} index={this.props.index}>
                 {(provided, snapshot) => (
                     <div className='task-column'
@@ -15,12 +29,11 @@ class TaskColumn extends React.Component {
                         <ColumnTitle title={this.props.title}/>
                         <Droppable type={'task'} droppableId={this.props.id}>
                             {(provided) => (
-
-                                    <ul className="tasks custom-scroll" {...provided.droppableProps}
-                                        ref={provided.innerRef}>
-                                        {this.props.children}
-                                        {provided.placeholder}
-                                    </ul>
+                                <ul className="tasks custom-scroll" {...provided.droppableProps}
+                                    ref={provided.innerRef}>
+                                    {this.props.children}
+                                    {provided.placeholder}
+                                </ul>
                             )}
                         </Droppable>
                         <NewTaskButton/>
@@ -31,17 +44,8 @@ class TaskColumn extends React.Component {
     }
 }
 
+TaskColumn.defaultProps = {
+    staticColumn: false,
+};
+
 export default TaskColumn;
-
-
-/*                        <Droppable droppableId={this.props.id}>
-                            {(provided) => (
-                                <ul className="tasks" {...provided.droppableProps} ref={provided.innerRef}>
-
-                                    {this.props.children}
-                                    {provided.placeholder}
-                                </ul>
-                            )}
-                        </Droppable>
-
-                        */

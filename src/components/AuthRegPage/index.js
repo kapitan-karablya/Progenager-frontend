@@ -9,10 +9,13 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 class AuthRegPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isUserRegistered: true
+        };
+    }
 
-    state = {
-        isUserRegistered: true
-    };
 
     toggleUserStatus = () => {
         const {isUserRegistered} = this.state;
@@ -20,13 +23,15 @@ class AuthRegPage extends React.Component {
     };
 
     render() {
-        const { isUserRegistered } = this.state;
+        const {isUserRegistered} = this.state;
         return (
             <div className="auth-reg-page">
-                <AuthRegHeader  isUserRegistered={isUserRegistered}  onClick={this.toggleUserStatus} />
-                {isUserRegistered ? <Authorization update={this.props.update} cookies={this.props.cookies}/> : <Registration/>}
+                <AuthRegHeader isUserRegistered={isUserRegistered} onClick={this.toggleUserStatus}/>
+                {isUserRegistered
+                    ? <Authorization update={this.props.update} cookies={this.props.cookies}/>
+                    : <Registration/>}
                 <AuthRegPageLink onClick={this.toggleUserStatus}
-                                 text= {isUserRegistered
+                                 text={isUserRegistered
                                      ? "Ещё нет аккаунта? Зарегестрируйтесь!"
                                      : "Уже зарегестрированы? Авторизуйтесь!"}/>
             </div>

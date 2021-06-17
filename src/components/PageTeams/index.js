@@ -16,7 +16,7 @@ import Text from "../ExpandingElement/Text";
 import Description from "../ExpandingElement/Description";
 import Participants from "../Participants";
 import ElementsList from "../ElementsList";
-import ProjectStatus from "../ExpandingElement/ProjectStatus";
+import ProjectStatus from "../ProjectStatus";
 import Modal from "../Modal";
 import ProjectModal from "../Modal/Project";
 
@@ -51,54 +51,262 @@ const projectsList = [
 
 const teamsList = [
     {
-    id: "285783",
-    members: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
-    projects: [
-        {
-            id: "1",
-            title: "Первый проекет",
-            description: "Описание проекта",
-            participants: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
-            completed: true,
+        id: "285783",
+        members: [{
+            firstName: "Иван",
+            lastName: "Красиков",
+            color: "#43A54C"
         }, {
-            id: "2",
-            title: "Второй проект",
-            description: "Описание проекта",
-            participants: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
-            completed: false,
+            firstName: "Александра",
+            lastName: "Фокина",
+            color: "#A54383"
         }, {
-            id: "3",
-            title: "Третий проект",
-            description: "Описание проекта",
-            participants: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
-            completed: false,
-        }
-    ],
-}, {
-    id: "782884",
-    members: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
-    projects: [
-        {
-            id: "4",
-            title: "Первый проекет",
-            description: "Описание проекта",
-            participants: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
-            completed: true,
-        }
-    ],
-}, {
-    id: "687915",
-    members: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
-    projects: [
-        {
-            id: "5",
-            title: "Третий проект",
-            description: "Описание проекта",
-            participants: ["Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Красиков Иван", "Габдеев Эльдар"],
-            completed: false,
-        }
-    ],
-}];
+            firstName: "Никита",
+            lastName: "Петров",
+            color: "#7A43A5"
+        }, {
+            firstName: "Оливия",
+            lastName: "Егорова",
+            color: "#A57243"
+        }, {
+            firstName: "Дмитрий",
+            lastName: "Кузнецов",
+            color: "#4352A5"
+        }, {
+            firstName: "Иван",
+            lastName: "Балашов",
+            color: "#A57243"
+        }, {
+            firstName: "Эмилия",
+            lastName: "Коновалова",
+            color: "#A54343"
+        }, {
+            firstName: "Ирина",
+            lastName: "Князева",
+            color: "#4352A5"
+        }, {
+            firstName: "Мария",
+            lastName: "Фролова",
+            color: "#43A54C"
+        }, {
+            firstName: "Семён",
+            lastName: "Тихонов",
+            color: "#43A59F"
+        }],
+        projects: [
+            {
+                id: "1",
+                title: "Первый проекет",
+                description: "Описание проекта",
+                members: [{
+                    firstName: "Иван",
+                    lastName: "Красиков",
+                    color: "#43A54C"
+                }, {
+                    firstName: "Александра",
+                    lastName: "Фокина",
+                    color: "#A54383"
+                }, {
+                    firstName: "Никита",
+                    lastName: "Петров",
+                    color: "#7A43A5"
+                }, {
+                    firstName: "Оливия",
+                    lastName: "Егорова",
+                    color: "#A57243"
+                }, {
+                    firstName: "Дмитрий",
+                    lastName: "Кузнецов",
+                    color: "#4352A5"
+                }, {
+                    firstName: "Иван",
+                    lastName: "Балашов",
+                    color: "#A57243"
+                }, {
+                    firstName: "Эмилия",
+                    lastName: "Коновалова",
+                    color: "#A54343"
+                }, {
+                    firstName: "Ирина",
+                    lastName: "Князева",
+                    color: "#4352A5"
+                }, {
+                    firstName: "Мария",
+                    lastName: "Фролова",
+                    color: "#43A54C"
+                }, {
+                    firstName: "Семён",
+                    lastName: "Тихонов",
+                    color: "#43A59F"
+                }],
+                completed: true,
+            }, {
+                id: "2",
+                title: "Второй проект",
+                description: "Описание проекта",
+                members: [{
+                    firstName: "Иван",
+                    lastName: "Красиков",
+                    color: "#43A54C"
+                }, {
+                    firstName: "Александра",
+                    lastName: "Фокина",
+                    color: "#A54383"
+                }, {
+                    firstName: "Никита",
+                    lastName: "Петров",
+                    color: "#7A43A5"
+                }, {
+                    firstName: "Оливия",
+                    lastName: "Егорова",
+                    color: "#A57243"
+                }, {
+                    firstName: "Дмитрий",
+                    lastName: "Кузнецов",
+                    color: "#4352A5"
+                }, {
+                    firstName: "Иван",
+                    lastName: "Балашов",
+                    color: "#A57243"
+                }, {
+                    firstName: "Эмилия",
+                    lastName: "Коновалова",
+                    color: "#A54343"
+                }, {
+                    firstName: "Ирина",
+                    lastName: "Князева",
+                    color: "#4352A5"
+                }, {
+                    firstName: "Мария",
+                    lastName: "Фролова",
+                    color: "#43A54C"
+                }, {
+                    firstName: "Семён",
+                    lastName: "Тихонов",
+                    color: "#43A59F"
+                }],
+                completed: false,
+            }, {
+                id: "3",
+                title: "Третий проект",
+                description: "Описание проекта",
+                members: [{
+                    firstName: "Иван",
+                    lastName: "Красиков",
+                    color: "#43A54C"
+                }, {
+                    firstName: "Александра",
+                    lastName: "Фокина",
+                    color: "#A54383"
+                }, {
+                    firstName: "Никита",
+                    lastName: "Петров",
+                    color: "#7A43A5"
+                }, {
+                    firstName: "Оливия",
+                    lastName: "Егорова",
+                    color: "#A57243"
+                }, {
+                    firstName: "Дмитрий",
+                    lastName: "Кузнецов",
+                    color: "#4352A5"
+                }, {
+                    firstName: "Иван",
+                    lastName: "Балашов",
+                    color: "#A57243"
+                }, {
+                    firstName: "Эмилия",
+                    lastName: "Коновалова",
+                    color: "#A54343"
+                }, {
+                    firstName: "Ирина",
+                    lastName: "Князева",
+                    color: "#4352A5"
+                }, {
+                    firstName: "Мария",
+                    lastName: "Фролова",
+                    color: "#43A54C"
+                }, {
+                    firstName: "Семён",
+                    lastName: "Тихонов",
+                    color: "#43A59F"
+                }],
+                completed: false,
+            }
+        ],
+    }, {
+        id: "687915",
+        members: [{
+            firstName: "Анна",
+            lastName: "Ковалева",
+            color: "#A54383"
+        }, {
+            firstName: "Иван",
+            lastName: "Красиков",
+            color: "#43A54C"
+        }],
+        projects: [
+            {
+                id: "5",
+                title: "Третий проект",
+                description: "Описание проекта",
+                members: [{
+                    firstName: "Анна",
+                    lastName: "Ковалева",
+                    color: "#A54383"
+                }, {
+                    firstName: "Иван",
+                    lastName: "Красиков",
+                    color: "#43A54C"
+                }],
+                completed: false,
+            }
+        ],
+    }, {
+        id: "782884",
+        members: [{
+            firstName: "Михаил",
+            lastName: "Соколов",
+            color: "#4376A5"
+        }, {
+            firstName: "Иван",
+            lastName: "Красиков",
+            color: "#43A54C"
+        }, {
+            firstName: "Александр",
+            lastName: "Зеленин",
+            color: "#A3A543"
+        }, {
+            firstName: "Кристина",
+            lastName: "Смирнова",
+            color: "#A57243"
+        }],
+        projects: [
+            {
+                id: "4",
+                title: "Первый проекет",
+                description: "Описание проекта",
+                members: [{
+                    firstName: "Михаил",
+                    lastName: "Соколов",
+                    color: "#4376A5"
+                }, {
+                    firstName: "Иван",
+                    lastName: "Красиков",
+                    color: "#43A54C"
+                }, {
+                    firstName: "Александр",
+                    lastName: "Зеленин",
+                    color: "#A3A543"
+                }, {
+                    firstName: "Кристина",
+                    lastName: "Смирнова",
+                    color: "#A57243"
+                }],
+                completed: true,
+            }
+        ],
+    }];
 
 
 class Teams extends React.Component {
@@ -118,11 +326,11 @@ class Teams extends React.Component {
     }
 
     openModal(teamId, projectId) {
-        this.setState({ isProjectModalOpen: true, modalProjectID: projectId, modalTeamId: teamId })
+        this.setState({isProjectModalOpen: true, modalProjectID: projectId, modalTeamId: teamId})
     }
 
     closeModal() {
-        this.setState({ isProjectModalOpen: false })
+        this.setState({isProjectModalOpen: false})
     }
 
     render() {

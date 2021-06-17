@@ -15,14 +15,15 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isUserAuthorizd: false,
+            isUserAuthorized: false,
         };
     }
 
-    hangeState(){
-        this.setState({isUserAuthorizd: !!cookies.get("access_token")})
-    }
 
+
+    changeState(){
+        this.setState({isUserAuthorized: cookies.get("access_token")})
+    }
 
     render() {
         return cookies.get("access_token") ? (
@@ -31,7 +32,8 @@ class App extends React.Component {
               <Sidebar />
               <Switch>
                 <Redirect exact from="/" to="/projects" />
-                <Route exact path="/projects" component={PersonalProjects} />
+                  <Redirect exact from="/callback" to="/projects" />
+                  <Route exact path="/projects" component={PersonalProjects} />
                 <Route path="/project" component={CurrentProject} />
                 <Route path="/tasks" component={PersonalTasks} />
                 <Route path="/teams" component={Teams} />
@@ -40,27 +42,40 @@ class App extends React.Component {
           </div>
         ) : (
           <div className="body body-auth">
-            <AuthRegPage update={() => this.hangeState()} cookies={cookies} />
+            <AuthRegPage update={() => this.changeState()} cookies={cookies} />
           </div>
         );
     }
   }
 
-/*function App() {
-    return (
+export default App;
+
+
+/*class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isUserAuthorized: false,
+        };
+    }
+
+    render() {
+        return (
         <div className="body">
             <BrowserRouter>
                 <Sidebar/>
                 <Switch>
                     <Redirect exact from="/" to="/projects"/>
-                    <Route exact path='/projects' component={PersonalProjects}/>
-                    <Route path='/project' component={CurrentProject}/>
-                    <Route path='/tasks' component={PersonalTasks}/>
-                    <Route path='/teams' component={Teams}/>
+                    <Route exact path="/projects" component={PersonalProjects}/>
+                    <Route path="/project" component={CurrentProject}/>
+                    <Route path="/tasks" component={PersonalTasks}/>
+                    <Route path="/teams" component={Teams}/>
                 </Switch>
             </BrowserRouter>
         </div>
-    );
-}*/
+        )
+    }
 
-export default App;
+}
+
+export default App;*/
