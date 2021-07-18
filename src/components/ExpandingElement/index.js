@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import show from '../../icons/show.svg'
+import show from '../../icons/show.svg';
 import ListLine from "./ListLine";
 
 

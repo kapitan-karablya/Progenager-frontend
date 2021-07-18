@@ -1,5 +1,6 @@
 .list-line {
     width: 100%;
+    margin-right: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,11 +12,18 @@
 
 }
 
-.list-line:hover {
+.list-line-wrapper {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding-right: 30px;
+}
+
+.list-line-wrapper:hover .list-line{
     background-color: #F4F4F4;
 }
 
-.list-line:hover:after {
+{
     content: "";
     position: absolute;
     right: -50px;
@@ -23,4 +31,15 @@
     height: 29px;
     background-image: url("../../../icons/edit.svg");
     cursor: pointer;
+}
+
+.edit-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.list-line-wrapper:hover .edit-button {
+    visibility: visible;
 }

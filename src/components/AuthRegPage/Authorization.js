@@ -8,6 +8,7 @@ import AuthRegForm from "./Form";
 import SplitLine from "./SplitLine";
 import Item from "./Item";
 import GitHubLoginButton from "./GitHubLoginButton";
+import loading2 from "../../icons/loading3.gif"
 
 
 const CLIENT_ID = "4e343cf0194406a5b63c";
@@ -22,7 +23,12 @@ class Authorization extends React.Component {
             password: null,
             client_id: "000",
             redirect_uri: "jjj",
+            load: true,
         };
+    }
+
+    StartLoad() {
+        this.setState({load: true});
     }
 
     componentDidMount() {
@@ -30,17 +36,16 @@ class Authorization extends React.Component {
             window.location.href.match(/\?code=(.*)/) &&
             window.location.href.match(/\?code=(.*)/)[1];
         if (code) {
-            console.log(code)
-
-            const url = `https://github.com/login/oauth/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&code=${code}`;
+            console.log(code);
+            this.StartLoad();
+            /*const url = `https://github.com/login/oauth/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&code=${code}`;*/
             xhr({
                 url: "https://local-dddd.herokuapp.com/authenticate/" + code,
                 json: true,
             }, (err, resp, body) => {
                 if (body.error) {
                     alert("Ошибка авторизации")
-                }
-                else if (body.token) {
+                } else if (body.token) {
                     this.props.cookies.set('access_token', body.token);
                     this.props.update();
                 }
@@ -54,7 +59,7 @@ class Authorization extends React.Component {
     }
 
     handelAuth(event) {
-        let response = fetch("https://localhost:44317/Users/Authenticate?login="
+        fetch("https://localhost:44317/Users/Authenticate?login="
             + this.state.login + "&password=" + this.state.password, {
             method: "GET",
         }).then(response => {
@@ -90,6 +95,10 @@ class Authorization extends React.Component {
                 <Item>
                     <GitHubLoginButton client_id={CLIENT_ID} redirect_url={REDIRECT_URI} text="Войти через GitHub"/>
                 </Item>
+                <div className={this.state.load ? "load-wrapper" : "load-hide"}>
+                    <div className="load"/>
+                    <img className="loading-icon" src={loading2} alt="загрузка"/>
+                </div>
             </div>
         );
     }
