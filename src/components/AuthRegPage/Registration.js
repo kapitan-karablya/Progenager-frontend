@@ -27,13 +27,13 @@ class Registration extends React.Component {
     }
 
     changeStateValue(event) {
-        this.setState({ [event.target.name]: event.target.value })
+        this.setState({[event.target.name]: event.target.value})
     }
 
     handelSubmit(event) {
-        let response = fetch("https://localhost:44317/Users/register?login=" + this.state.login + "&password="+this.state.password, {
+        let response = fetch("https://localhost:44317/Users/register?login=" + this.state.login + "&password=" + this.state.password, {
             method: "PUT",
-            body:{
+            body: {
                 hui: "123"
             }
         }).then(response => {
@@ -51,7 +51,8 @@ class Registration extends React.Component {
                 </Item>
                 <AuthRegForm onSubmit={(e) => this.handelSubmit(e)}>
                     <Item>
-                        <InputName firstName={this.state.firstName} lastName={this.state.lastName} onChange={(e) => this.changeStateValue(e)}/>
+                        <InputName firstName={this.state.firstName} lastName={this.state.lastName}
+                                   onChange={(e) => this.changeStateValue(e)}/>
                     </Item>
                     <Item>
                         <InputLogin login={this.state.login} onChange={(e) => this.changeStateValue(e)}/>
@@ -67,7 +68,8 @@ class Registration extends React.Component {
                     <SplitLine/>
                 </Item>
                 <Item>
-                    <GitHubLoginButton client_id={CLIENT_ID} redirect_url={REDIRECT_URI} text="Войти через GitHub"/>
+                    <GitHubLoginButton client_id={this.props.client_id} redirect_url={this.props.redirect_url}
+                                       text="Войти через GitHub"/>
                 </Item>
             </div>
         );
