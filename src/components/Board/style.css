@@ -11,7 +11,7 @@
 
 .board {
     width: 100%;
-    background-color: var(--basic-light-gray);
+    background-color: var(--gray);
     box-sizing: border-box;
     display: flex;
     overflow: scroll;

@@ -7,8 +7,8 @@
     flex-direction: column;
     flex-shrink: 0;
     position: relative;
-    background-color: var(--basic-light-gray);
-    box-shadow: 0 8px 5px 5px var(--basic-light-gray);
+    background-color: var(--gray);
+    box-shadow: 0 8px 5px 5px var(--gray);
 }
 
 .task-column:after {
@@ -18,7 +18,7 @@
     top: 65px;
     left: 5px;
     position: absolute;
-    background: linear-gradient(to bottom, var(--basic-light-gray), transparent 20px);
+    background: linear-gradient(to bottom, var(--gray), transparent 20px);
 }
 
 .new-task-button:after {
@@ -28,7 +28,7 @@
     top: -30px;
     left: 5px;
     position: absolute;
-    background: linear-gradient(to bottom, transparent, var(--basic-light-gray) 20px);
+    background: linear-gradient(to bottom, transparent, var(--gray) 20px);
 }
 
 .column-title {
@@ -60,7 +60,7 @@
     font-size: 16px;
     background: none;
     border: none;
-    color: var(--basic-gray);
+    color: var(--gray--darken);
     cursor: pointer;
     margin: 10px 0;
 }

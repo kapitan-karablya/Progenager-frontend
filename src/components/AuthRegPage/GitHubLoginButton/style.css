@@ -11,8 +11,16 @@
     color: var(--basic-white);
     border: none;
     border-radius: 5px;
-    background-color: var(--github-black);
+    background-color: var(--github-button);
     text-decoration: none;
+}
+
+.github-login-button:hover,
+.github-login-button:focus{
+    background-color: var(--github-button-hover);
+}
+.github-login-button:active{
+    background-color: var(--github-button-active);
 }
 
 .github-icon {

@@ -3,7 +3,7 @@
     height: 60px;
     font-size: 24px;
     border-radius: 50%;
-    border: 2px solid var(--basic-light-gray);
+    border: 2px solid var(--gray);
     background-color: var(--user-icon-color);
     cursor: pointer;
     user-select: none;

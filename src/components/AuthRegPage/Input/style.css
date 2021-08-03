@@ -4,7 +4,7 @@
     height: 50px;
     padding: 0 40px 0 50px;
     box-sizing: border-box;
-    border: 1px var(--basic-gray) inset;
+    border: 1px var(--gray--darken) inset;
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
@@ -19,7 +19,7 @@
 }
 
 .auth-reg-input::placeholder {
-    color: var(--basic-gray);
+    color: var(--gray--darken);
     font-size: 18px;
     letter-spacing: normal;
 }

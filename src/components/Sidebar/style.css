@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: var(--basic-darkblue);
+    background-color: var(--color-main);
     box-sizing: border-box;
     transition: 0.3s linear;
     z-index: 100;
@@ -55,13 +55,13 @@
     transition: 0.3s linear;
     overflow: hidden;
     white-space: nowrap;
-    color: var(--basic-light-gray);
+    color: var(--gray);
     font-size: 20px;
     font-weight: 600;
 }
 
 .active {
-    background-color: var(--basic-dark-darkblue);
+    background-color: var(--color-main--dark);
     position: relative;
 
 }
@@ -72,6 +72,6 @@
     height: 100%;
     position: absolute;
     left: 0;
-    background-color: var(--basic-light-gray);
+    background-color: var(--gray);
 }
 

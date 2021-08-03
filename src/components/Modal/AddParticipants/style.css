@@ -43,7 +43,7 @@
 .participants-search {
     padding: 1px 1px 1px 50px;
     border: none;
-    border-bottom: 1px solid var(--basic-gray);
+    border-bottom: 1px solid var(--gray--darken);
     position: relative;
 
 }

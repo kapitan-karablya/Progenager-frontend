@@ -8,7 +8,7 @@
 .split-line-dash {
     width: 150px;
     height: 0;
-    border-bottom: 1px solid var(--basic-gray);
+    border-bottom: 1px solid var(--gray--darken);
 }
 
 .split-line-label {
@@ -16,5 +16,5 @@
     font-size: 24px;
     line-height: 24px;
     font-weight: 700;
-    color: var(--basic-gray);
+    color: var(--gray--darken);
 }

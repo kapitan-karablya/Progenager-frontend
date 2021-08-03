@@ -1,6 +1,5 @@
 //import './App.css';
 import React from "react";
-import LoginHeader from "./components/LoginHeader";
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";

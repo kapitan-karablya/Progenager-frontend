@@ -70,7 +70,7 @@
     font-family: Roboto, sans-serif;
     font-size: 16px;
     font-weight: bold;
-    background-color: var(--basic-darkblue);
+    background-color: var(--color-main);
     color: var(--basic-white);
     border: none;
     border-radius: 5px;

@@ -8,9 +8,14 @@
     color: var(--basic-white);
     border: none;
     border-radius: 5px;
-    background-color: var(--basic-darkblue);
+    background-color: var(--color-main);
+    cursor: pointer;
 }
 
-.github-login-button {
-    background-color: var(--github-black);
+.auth-reg-form-button:hover,
+.auth-reg-form-button:focus{
+    background-color: var(--color-main--ligth);
+}
+.auth-reg-form-button:active{
+    background-color: var(--color-main--dark);
 }

@@ -24,8 +24,18 @@
     padding: 0 20px;
     border: none;
     border-radius: 10px;
-    background-color: var(--basic-light-gray);
+    background-color: var(--gray);
     font-size: 20px;
     color: var(--header-button-text);
     cursor: pointer;
+}
+
+.auth-reg-header-button:hover,
+.auth-reg-header-button:focus{
+    background-color: var(--gray--light);
+
+}
+
+.auth-reg-header-button:active{
+    background-color: var(--gray--dark);
 }

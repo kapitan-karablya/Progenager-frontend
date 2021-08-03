@@ -5,7 +5,7 @@
     flex-direction: column;
     padding: 20px;
     background-color: var(--basic-white);
-    border-left: 10px solid var(--basic-darkblue);
+    border-left: 10px solid var(--color-main);
     border-radius: 10px;
     margin: 10px 20px;
 }
@@ -27,7 +27,7 @@
 .project-card-item-title {
     width: 120px;
     flex-shrink: 0;
-    color: var(--basic-gray);
+    color: var(--gray--darken);
 }
 
 .project-card-item-value {

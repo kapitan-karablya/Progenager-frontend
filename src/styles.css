@@ -6,12 +6,21 @@ html, body, .root, .body{
 :root {
     --basic-black: #000000;
     --basic-white: #ffffff;
-    --basic-gray: #A3A3A3;
-    --basic-light-gray: #E9E9E9;
-    --super-light-gray: #F6F6F6;
-    --basic-darkblue: #53769A;
-    --basic-dark-darkblue: #456485;
-    --github-black: #24292E;
+
+    --gray--lighten: #F6F6F6;
+    --gray--light: #F0F0F0;
+    --gray: #E9E9E9;
+    --gray--dark: #CFCFCF;
+    --gray--darken: #A3A3A3;
+
+    --color-main--ligth: #5A80A6;
+    --color-main: #53769A;
+    --color-main--dark: #456485;
+
+    --github-button: #24292E;
+    --github-button-hover: #323F45;
+    --github-button-active: #10140F;
+
     --header-button-text: #3F3F3F;
     --user-icon-color: #A67BEC;
     --performers-icon: #4376A5;
@@ -55,7 +64,7 @@ body{
 
 .custom-scroll::-webkit-scrollbar-track {
     border-radius: 10px;
-    background-color: var(--basic-light-gray);
+    background-color: var(--gray);
 }
 
 
@@ -69,7 +78,7 @@ body{
 }
 
 .custom-scroll::-webkit-scrollbar-corner {
-    background-color: var(--basic-light-gray);
+    background-color: var(--gray);
 
 }
 
