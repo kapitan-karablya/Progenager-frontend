@@ -14,7 +14,7 @@ import ExpandingElement from "../ExpandingElement";
 import ListLine from "../ExpandingElement/ListLine";
 import Text from "../ExpandingElement/Text";
 import Description from "../ExpandingElement/Description";
-import Participants from "../Participants";
+import Participants from "../CommonElements/Participants";
 import ElementsList from "../ElementsList";
 import ProjectStatus from "../ProjectStatus";
 import Modal from "../Modal";

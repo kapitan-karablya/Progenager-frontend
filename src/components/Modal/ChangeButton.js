@@ -1,6 +1,6 @@
 import React from "react";
 import './style.css'
-import Participants from "../Participants";
+import Participants from "../CommonElements/Participants";
 
 class ChangeButton extends React.Component {
 

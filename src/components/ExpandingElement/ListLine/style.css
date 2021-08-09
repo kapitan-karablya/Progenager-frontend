@@ -16,30 +16,15 @@
     width: 100%;
     display: flex;
     box-sizing: border-box;
-    padding-right: 30px;
+    padding-right: 50px;
 }
 
-.list-line-wrapper:hover .list-line{
+.list-line-wrapper:hover .list-line,
+.list-line:focus {
     background-color: #F4F4F4;
 }
 
-{
-    content: "";
-    position: absolute;
-    right: -50px;
-    width: 29px;
-    height: 29px;
-    background-image: url("../../../icons/edit.svg");
-    cursor: pointer;
-}
-
-.edit-button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    visibility: hidden;
-}
-
-.list-line-wrapper:hover .edit-button {
+.list-line-wrapper:hover .edit-button,
+.list-line-wrapper:focus-within .edit-button {
     visibility: visible;
 }

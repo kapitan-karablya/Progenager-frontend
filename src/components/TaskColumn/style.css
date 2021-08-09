@@ -66,13 +66,26 @@
 }
 
 .new-task-button:before {
-    content: "";
+    content: "+";
     height: 15px;
     width: 15px;
+    font-size:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     top: 3px;
     left: 10px;
     position: absolute;
-    background-image: url(../../icons/plus.svg);
+}
+
+.new-task-button:hover,
+.new-task-button:focus
+{
+    color: black;
+}
+
+.new-task-button:active {
+    color: var(--color-main);
 }
 
 .new-column-button {
@@ -84,6 +97,17 @@
     border: none;
     cursor: pointer;
     margin: 0 20px;
+}
+
+.new-column-button:hover,
+.new-column-button:focus
+{
+    color: black;
+}
+
+.new-column-button:active {
+    background-color: var(--color-main--lighten);
+    color: black;
 }
 
 .column-title-button {
@@ -113,7 +137,6 @@
     text-indent: 40px;
     padding: 0;
     outline: none;
-
 }
 
 .column-title-save-button {

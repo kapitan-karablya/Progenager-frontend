@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./style.css";
-import Participants from "../Participants";
+import Participants from "../CommonElements/Participants";
 import ProjectStatus from "../ProjectStatus";
 
 

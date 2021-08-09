@@ -2,11 +2,10 @@ import React from "react";
 import {withResizeDetector} from 'react-resize-detector';
 
 import "./style.css";
-import Performer from "../UserIcon/Performer";
+import Performer from "../../UserIcon/Performer";
 
 
 class Participants extends React.Component {
-
 
     render() {
         const width = this.props.width;

@@ -1,0 +1,15 @@
+.edit-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.edit-image {
+    fill: var(--gray--darkest);
+}
+
+.edit-button:hover .edit-image,
+.edit-button:focus .edit-image{
+    fill: black;
+}

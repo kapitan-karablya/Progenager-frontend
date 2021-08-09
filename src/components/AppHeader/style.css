@@ -46,6 +46,14 @@
     cursor: pointer;
 }
 
+.header-button:hover {
+    background: var(--gray--dark);
+}
+
+.header-button:active {
+    background-color: var(--gray--darken);
+}
+
 .header-button-image {
     margin-right: 10px;
 }
@@ -55,3 +63,4 @@
     color: var(--header-button-text);
     white-space: nowrap;
 }
+

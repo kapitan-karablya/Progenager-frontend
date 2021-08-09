@@ -1,7 +1,6 @@
 .expanding-element {
     width: 100%;
     margin-bottom: 20px;
-    padding-left: 24px;
     background: var(--basic-white);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -9,10 +8,10 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-
 }
 
 .constant-part {
+    padding-left: 25px;
     height: 42px;
     display: flex;
     flex-direction: row;
@@ -27,23 +26,16 @@
 .hiding-part {
     width: 100%;
     box-sizing: border-box;
-    padding: 10px 20px 20px 12px;
-    display: none;
-
-
-}
-
-.expanding-element-checkbox {
+    padding: 10px 30px 20px 25px;
     display: none;
 }
 
-.expanding-element-checkbox:checked ~ .hiding-part {
-    display:block;
-}
-
-
-.expanding-element-checkbox:checked ~ .constant-part .show-button {
+.show-button.visible {
     transform: rotate(180deg);
+}
+
+.hiding-part.visible {
+    display: block;
 }
 
 .line-text {
@@ -54,7 +46,7 @@
 }
 
 .description {
-    width: 50%;
+    width: 40%;
     padding: 5px;
     margin-right: 20px;
     display: flex;

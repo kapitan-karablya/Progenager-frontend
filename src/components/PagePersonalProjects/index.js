@@ -17,7 +17,7 @@ import Task from "../Task";
 import ListLine from "../ExpandingElement/ListLine";
 import ProjectStatus from "../ProjectStatus";
 import Description from "../ExpandingElement/Description";
-import Participants from "../Participants";
+import Participants from "../CommonElements/Participants";
 import ProjectModal from "../Modal/Project";
 import SimpleBar from "simplebar-react";
 import cookies from "../../helpers/Coocies";

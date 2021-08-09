@@ -1,7 +1,7 @@
 import React from "react";
 import './style.css'
 import ModalForm from "./Form";
-import Participants from "../Participants";
+import Participants from "../CommonElements/Participants";
 import ChangeButton from "./ChangeButton";
 import ProjectModal from "./Project";
 import AddParticipants from "./AddParticipants";

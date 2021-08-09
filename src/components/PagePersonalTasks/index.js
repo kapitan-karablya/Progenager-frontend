@@ -13,7 +13,7 @@ import Board from "../Board";
 import ExpandingElement from "../ExpandingElement";
 import ListLine from "../ExpandingElement/ListLine";
 import Description from "../ExpandingElement/Description";
-import Participants from "../Participants";
+import Participants from "../CommonElements/Participants";
 import ProjectStatus from "../ProjectStatus";
 import ElementsList from "../ElementsList";
 import Text from "../ExpandingElement/Text";
