@@ -11,11 +11,12 @@
 }
 
 .constant-part {
-    padding-left: 25px;
+    padding: 0 25px;
     height: 42px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-start;  /*space-between ???*/
     cursor: pointer;
 }
 
@@ -28,6 +29,10 @@
     box-sizing: border-box;
     padding: 10px 30px 20px 25px;
     display: none;
+}
+
+.show-button {
+    margin-right: 25px;
 }
 
 .show-button.visible {
@@ -66,7 +71,7 @@
 }
 
 .task-date {
-    width: 10%;
+    width: 15%;
     display: flex;
     align-items: center;
 }

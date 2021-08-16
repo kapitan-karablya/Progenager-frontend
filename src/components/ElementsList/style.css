@@ -1,8 +1,11 @@
 .elements-list {
     width: 100%;
-    min-width: 500px;   /*под вопросом*/
+    min-width: 500px;
+    height: auto;
     padding: 50px 70px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    overflow: scroll;
+
 }

@@ -22,13 +22,13 @@ class Sidebar extends React.Component {
         const sidebarItems = sidebarItemsOptions.map(item => <SidebarItem item={item}
             /*createClickHandler={createClickHandler}*//>);
         return (
-                <div className='sidebar'>
-                    <div className='sidebar-item sidebar-logo'>
-                        <div className='sidebar-logo-image'><img src={logo} alt="logo"/></div>
-                        <div className='sidebar-item-text'>rogenager.io</div>
-                    </div>
-                    {sidebarItems}
+            <div className='sidebar'>
+                <div className='sidebar-logo'>
+                    <div className='sidebar-logo-image'><img src={logo} alt="logo"/></div>
+                    <div className='sidebar-item-text'>rogenager.io</div>
                 </div>
+                {sidebarItems}
+            </div>
         )
     }
 }

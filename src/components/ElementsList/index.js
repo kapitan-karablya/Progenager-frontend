@@ -6,7 +6,7 @@ class ElementsList extends React.Component {
     render() {
         return (
 
-            <div className="elements-list">
+            <div className="elements-list custom-scroll">
                 {this.props.children}
             </div>
         )

@@ -16,23 +16,22 @@ class ExpandingElement extends React.Component {
         this.setState({isActive: !this.state.isActive});
     };
 
-    onKeyPress = e => {
-        console.log(e.target.className);
+    onKeyDown = e => {
         if (e.target.className !== "expanding-element")
             return;
         if (e.code === "Enter")
-            this.setState({isActive: !this.state.isActive});
+            this.toggleClass();
     };
 
     render() {
         return (
-            <div className="expanding-element" tabIndex="0"  onKeyDown={this.onKeyPress}>
+            <div className="expanding-element" tabIndex="0" onKeyDown={this.onKeyDown}>
                 <label className="constant-part" onClick={this.toggleClass}>
+                    <img className={this.state.isActive ? "show-button visible" : "show-button"} src={show}
+                         alt="развернуть/скрыть"/>
                     <div className="element-title">
                         {this.props.title}
                     </div>
-                    <img className={this.state.isActive ? "show-button visible" : "show-button"} src={show}
-                         alt="развернуть/скрыть"/>
                 </label>
                 <div className={this.state.isActive ? "hiding-part visible" : "hiding-part"}>
                     {this.props.children}

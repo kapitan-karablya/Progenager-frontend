@@ -3,13 +3,14 @@ import React from "react";
 import "./style.css";
 import Participants from "../CommonElements/Participants";
 import ProjectStatus from "../ProjectStatus";
+import EditButton from "../CommonElements/EditButton";
 
 
 class ProjectCard extends React.Component {
 
     render() {
         return (
-            <div className="project-card" onClick={this.props.onClick}>
+            <div className="project-card" tabIndex="0">
                 <div className="project-card-title">{this.props.project.title}</div>
                 <div className="project-card-item">
                     <div className="project-card-item-title">Описание</div>
@@ -22,6 +23,9 @@ class ProjectCard extends React.Component {
                 <div className="project-card-item">
                     <div className="project-card-item-title">Статус</div>
                     <ProjectStatus isComplete={this.props.project.completed}/>
+                </div>
+                <div className="project-edit" onClick={this.props.onClick}>
+                <EditButton/>
                 </div>
             </div>
         )

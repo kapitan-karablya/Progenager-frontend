@@ -8,6 +8,8 @@
     border-left: 10px solid var(--color-main);
     border-radius: 10px;
     margin: 10px 20px;
+    position: relative;
+    cursor: default;
 }
 
 .project-card-title {
@@ -42,4 +44,14 @@
     -webkit-line-clamp: 7;
     overflow: hidden;
     height: 125px;
+}
+
+.project-edit {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+}
+
+.project-card:hover .edit-button {
+    visibility: visible;
 }

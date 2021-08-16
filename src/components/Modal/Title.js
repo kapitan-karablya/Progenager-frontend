@@ -7,10 +7,11 @@ class ModalTitle extends React.Component {
         return (
             <div className="modal-title">
                 <textarea className="modal-input title-textarea custom-scroll"
-                       type="text"
-                       placeholder={this.props.placeholder}
-                       defaultValue={this.props.title}/>
-                </div>
+                          type="text"
+                          placeholder={this.props.placeholder}
+                          defaultValue={this.props.title}
+                          autoFocus/>
+            </div>
         );
     }
 }

@@ -168,7 +168,7 @@ class PersonalProjects extends React.Component {
             projects: projectsList,
             isProjectModalOpen: false,
             modalProjectID: null,
-            tileView: true,
+            tileView: false,
         };
     }
 
@@ -265,7 +265,7 @@ class PersonalProjects extends React.Component {
                 </AppHeader>
                 <Board update={this.props.update}>
                     {this.state.tileView ? (
-                    <div className="project-cards">
+                    <div className="project-cards custom-scroll">
                         {this.state.projects.map((project, index) => {
                             return (
                                 <ProjectCard onClick={() => this.openModal(project.id)} project={project}/>

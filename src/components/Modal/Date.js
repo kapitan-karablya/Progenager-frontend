@@ -9,7 +9,7 @@ class ModalDate extends React.Component {
             <div className="modal-description">
                 <label className="modal-long-label" htmlFor="date-input">Дата окончания</label>
                 <input className="modal-input date-input" id="date-input" type={"date"}
-                          placeholder={this.props.placeholder} defaultValue={this.props.date}/>
+                       placeholder={this.props.placeholder} defaultValue={this.props.date}/>
             </div>
         );
     }
