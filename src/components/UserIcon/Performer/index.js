@@ -21,8 +21,8 @@ class Performer extends React.Component {
         }
 
         return (
-            <div className="performer-icon" style={{backgroundColor: color}}>
-                <UserIcon text={performer}/>
+            <div className="performer-icon">
+                <UserIcon text={performer} backgroundColor={color}/>
             </div>
         );
     }

@@ -27,7 +27,7 @@ class UserAccountModal extends React.Component {
                 <div className="user-account-modal-content">
                     <div className="user-account-title">Учетная запись</div>
                     <DividingLine/>
-                    <UserProfile name="Иван Красиков"/>
+                    <UserProfile name="Иван Красиков" color="green"/>
                     <UserAccountButton text="Изменить имя"/>
                     <UserAccountButton text="Изменить логин"/>
                     <UserAccountButton text="Изменить пароль"/>

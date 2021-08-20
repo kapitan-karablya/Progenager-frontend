@@ -19,6 +19,8 @@ import CurrentUser from "../UserIcon/Current";
 import NewColumnButton from "../TaskColumn/NewColumnButton";
 import NewTaskButton from "../TaskColumn/NewTaskButton";
 import ScrumBoard from "../Board/Scrum";
+import { ChromePicker } from 'react-color'
+
 
 const tasksList1 = [
     {
@@ -385,8 +387,17 @@ class CurrentProject extends React.Component {
         this.state = {
             columns: tasksList,
             methodology: "kanban",
+            displayColorPicker: false,
         };
     }
+
+    handleClick = () => {
+        this.setState({ displayColorPicker: !this.state.displayColorPicker })
+    };
+
+    handleClose = () => {
+        this.setState({ displayColorPicker: false })
+    };
 
     getTasks = id => this.state.columns.find(column => column.id === id).tasks;
     getColumnIndex = id => this.state.columns.findIndex(column => column.id === id);
@@ -463,6 +474,8 @@ class CurrentProject extends React.Component {
             </KanbanBoard>
         )
     }
+
+
 
     render() {
         return (

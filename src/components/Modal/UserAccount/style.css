@@ -48,7 +48,6 @@
     height: 50px;
     font-size: 24px;
     border-radius: 50%;
-    background-color: var(--user-icon-color);
     flex-shrink: 0;
 }
 
@@ -69,4 +68,20 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     color: #999999;
+}
+
+.colorPicker {
+    border: 1px solid var(--gray--darkest);
+    border-radius: 10px;
+    background-color: var(--gray);
+}
+
+.colorPickerCancelButton {
+    background-color: var(--gray);
+    width: 100%;
+    height: 30px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    border-radius: 10px;
 }

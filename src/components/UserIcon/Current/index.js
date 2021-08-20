@@ -8,8 +8,8 @@ class CurrentUserIcon extends React.Component {
 
     render() {
         return (
-            <div className="current-user-icon" style={{backgroundColor: this.props.color}}>
-                <UserIcon text={this.props.name}/>
+            <div className="current-user-icon">
+                <UserIcon text={this.props.name} backgroundColor={this.props.color}/>
             </div>
         );
     }

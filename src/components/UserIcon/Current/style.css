@@ -4,7 +4,6 @@
     font-size: 24px;
     border-radius: 50%;
     border: 2px solid var(--gray);
-    background-color: var(--user-icon-color);
     cursor: pointer;
     user-select: none;
     box-sizing: border-box;
