@@ -17,7 +17,7 @@ class UserIcon extends React.Component {
     };
 
     getInitialsColor = () => {
-        return this.hexToLuma(this.props.backgroundColor) > 0.57 ? "black" : "white";
+        return this.hexToLuma(this.props.backgroundColor) > 0.7 ? "black" : "white";
     };
 
     render() {

@@ -1,13 +1,16 @@
 .list-line {
     width: 100%;
     padding: 10px 0 10px 10px;
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 10%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--gray);
     border-radius: 5px;
     position: relative;
+    resize: none;
 
 }
 
@@ -15,7 +18,6 @@
     width: 100%;
     display: flex;
     box-sizing: border-box;
-    padding-right: 0px;
 }
 
 .list-line-wrapper:hover .list-line,

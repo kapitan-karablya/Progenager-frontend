@@ -44,14 +44,14 @@
 }
 
 .line-text {
-    width: 50%;
+    grid-column: span 5;
     display: flex;
     align-items: center;
     margin-right: 30px;
 }
 
 .description {
-    width: 40%;
+    grid-column: span 4;
     padding: 5px;
     margin-right: 20px;
     display: flex;
@@ -67,15 +67,15 @@
 
 
 .list-line .participants {
-    width: 20%;
+    grid-column: span 2;
 }
 
 .task-date {
-    width: 15%;
+    grid-column: span 1;
     display: flex;
     align-items: center;
 }
 
 .project-status-line {
-    width: 12%;
+    grid-column: span 1;
 }
