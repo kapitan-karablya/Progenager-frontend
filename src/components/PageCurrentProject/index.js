@@ -19,8 +19,7 @@ import CurrentUser from "../UserIcon/Current";
 import NewColumnButton from "../TaskColumn/NewColumnButton";
 import NewTaskButton from "../TaskColumn/NewTaskButton";
 import ScrumBoard from "../Board/Scrum";
-import { ChromePicker } from 'react-color'
-
+import TaskModal from "../Modal/Task";
 
 const tasksList1 = [
     {
@@ -366,7 +365,6 @@ const tasksList = [
 
 ];
 
-
 const moveTask = (source, destination, droppableSource, droppableDestination) => {
     const sourceClone = Array.from(source);
     const destClone = Array.from(destination);
@@ -388,16 +386,26 @@ class CurrentProject extends React.Component {
             columns: tasksList,
             methodology: "kanban",
             displayColorPicker: false,
+            isTaskModalOpen: false,
+            modalColumnID: null,
+            modalTaskID: null
         };
     }
 
-    handleClick = () => {
-        this.setState({ displayColorPicker: !this.state.displayColorPicker })
-    };
+    getTaskData (taskId, columnId) {
+        if(columnId === null)
+            return undefined;
+        const tasks = this.getTasks(columnId);
+        return tasks === undefined ? undefined : tasks.find(task => task.id === taskId)
+    }
 
-    handleClose = () => {
-        this.setState({ displayColorPicker: false })
-    };
+    openModal(columnId, taskId) {
+        this.setState({ isTaskModalOpen: true, modalColumnID: columnId, modalTaskID: taskId })
+    }
+
+    closeModal() {
+        this.setState({ isTaskModalOpen: false })
+    }
 
     getTasks = id => this.state.columns.find(column => column.id === id).tasks;
     getColumnIndex = id => this.state.columns.findIndex(column => column.id === id);
@@ -433,7 +441,6 @@ class CurrentProject extends React.Component {
         }
 
         this.setState({columns: newState});
-
     };
 
     renderScrum() {
@@ -461,11 +468,12 @@ class CurrentProject extends React.Component {
             <KanbanBoard onDragEnd={this.handleOnDragEnd} id={'board'}>
                 {this.state.columns.map((column, index) => {
                     return (
-                        <TaskColumn id={column.id} title={column.title} index={index}>
+                        <TaskColumn id={column.id} title={column.title} index={index} openTaskModal={() => this.openModal(null)}>
                             {column.tasks.map((task, index) => {
                                 return (
                                     <Task id={task.id} text={task.title} deadline={task.endTime}
-                                          performers={task.performers} color={task.color} index={index}/>
+                                          performers={task.performers} color={task.color} index={index}
+                                          openTaskModal={() => this.openModal(column.id, task.id)}/>
                                 )
                             })}
                         </TaskColumn>
@@ -474,8 +482,6 @@ class CurrentProject extends React.Component {
             </KanbanBoard>
         )
     }
-
-
 
     render() {
         return (
@@ -496,6 +502,8 @@ class CurrentProject extends React.Component {
                     this.state.methodology === "scrum" ?
                         this.renderScrum() :
                         null}
+                <TaskModal task={this.getTaskData(this.state.modalTaskID, this.state.modalColumnID)}
+                           isOpen={this.state.isTaskModalOpen} onClose={() => this.closeModal()}/>
             </AppPage>
         );
     }

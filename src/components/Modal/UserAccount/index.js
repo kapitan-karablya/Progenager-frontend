@@ -28,9 +28,9 @@ class UserAccountModal extends React.Component {
                     <div className="user-account-title">Учетная запись</div>
                     <DividingLine/>
                     <UserProfile name="Иван Красиков" color="green"/>
-                    <UserAccountButton text="Изменить имя"/>
-                    <UserAccountButton text="Изменить логин"/>
-                    <UserAccountButton text="Изменить пароль"/>
+                    <UserAccountButton type="text" text="Изменить имя" placeholder="Новое имя"/>
+                    <UserAccountButton type="login" text="Изменить логин"  placeholder="Новый логин"/>
+                    <UserAccountButton type="password" text="Изменить пароль"  placeholder="Новый пароль"/>
                     <DividingLine/>
                     <UserAccountButton text="Выйти" onClick={() => this.logOut()}/>
                 </div>

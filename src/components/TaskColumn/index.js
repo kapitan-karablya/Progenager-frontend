@@ -36,7 +36,7 @@ class TaskColumn extends React.Component {
                                 </ul>
                             )}
                         </Droppable>
-                        <NewTaskButton/>
+                        <NewTaskButton openTaskModal={this.props.openTaskModal}/>
                     </div>
                 )}
             </Draggable>

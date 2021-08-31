@@ -19,18 +19,20 @@ class ColumnTitle extends React.Component {
 
     render() {
         return (
-                <div className="column-title">
-                    {this.state.isEdit
-                        ? <div className="column-title-form">
-                            <input className="column-title-form-item column-title-input" defaultValue={this.props.title}
-                                   autoFocus onBlur={() => this.closeEdit()}/>
-                            <button className="column-title-form-item column-title-save-button" type="submit" aria-label="Сохранить"/>
-                            <button className="column-title-form-item column-title-close-button" aria-label="Закрыть" onClick={() => this.closeEdit()}/>
-                        </div>
-                        : <div className="column-title-button" onClick={() => this.openEdit()}>
-                            {this.props.title}
-                        </div>}
-                </div>
+            <div className="column-title">
+                {this.state.isEdit
+                    ? <div className="column-title-form">
+                        <input className="column-title-form-item column-title-input" defaultValue={this.props.title}
+                               autoFocus onBlur={() => this.closeEdit()}/>
+                        <button className="column-title-form-item column-title-save-button" type="submit"
+                                aria-label="Сохранить"/>
+                        <button className="column-title-form-item column-title-close-button" aria-label="Закрыть"
+                                onClick={() => this.closeEdit()}/>
+                    </div>
+                    : <div className="column-title-button" onClick={() => this.openEdit()}>
+                        {this.props.title}
+                    </div>}
+            </div>
 
         )
     }

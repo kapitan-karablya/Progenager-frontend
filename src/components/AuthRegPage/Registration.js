@@ -34,7 +34,7 @@ class Registration extends React.Component {
         let response = fetch("https://localhost:44317/Users/register?login=" + this.state.login + "&password=" + this.state.password, {
             method: "PUT",
             body: {
-                hui: "123"
+
             }
         }).then(response => {
             console.log(response)

@@ -10,7 +10,7 @@ class Task extends React.Component {
 
             <Draggable key={this.props.id} draggableId={this.props.id} index={this.props.index}>
                 {(provided) => (
-                    <div className='task' ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                    <div className='task' ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}  onClick={this.props.openTaskModal}>
                         <div className='task-text'>
                             {this.props.text}
                         </div>
