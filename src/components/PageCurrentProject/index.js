@@ -383,7 +383,7 @@ class CurrentProject extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            columns: tasksList,
+            project: tasksList,
             methodology: "kanban",
             displayColorPicker: false,
             isTaskModalOpen: false,
@@ -407,15 +407,15 @@ class CurrentProject extends React.Component {
         this.setState({ isTaskModalOpen: false })
     }
 
-    getTasks = id => this.state.columns.find(column => column.id === id).tasks;
-    getColumnIndex = id => this.state.columns.findIndex(column => column.id === id);
+    getTasks = id => this.state.project.find(column => column.id === id).tasks;
+    getColumnIndex = id => this.state.project.findIndex(column => column.id === id);
 
     handleOnDragEnd = (result) => {
         const {source, destination} = result;
-        let newState = this.state.columns;
+        let newState = this.state.project;
         if (!destination) return;
         if (source.droppableId === 'board') {
-            const items = Array.from(this.state.columns);
+            const items = Array.from(this.state.project);
             const [reorderedItem] = items.splice(result.source.index, 1);
             items.splice(result.destination.index, 0, reorderedItem);
 
@@ -440,20 +440,29 @@ class CurrentProject extends React.Component {
             newState[this.getColumnIndex(destination.droppableId)].tasks = result[destination.droppableId];
         }
 
-        this.setState({columns: newState});
+        this.setState({project: newState});
     };
+
+    getRandomColor() {
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
 
     renderScrum() {
         return (
-            <ScrumBoard onDragEnd={this.handleOnDragEnd} id={'board'} firstColumn={this.state.columns[0]}
-                        lastColumn={this.state.columns[this.state.columns.length - 1]}>
-                {this.state.columns.slice(1, this.state.columns.length - 1).map((column, index) => {
+            <ScrumBoard onDragEnd={this.handleOnDragEnd} id={'board'} firstColumn={this.state.project[0]}
+                        lastColumn={this.state.project[this.state.project.length - 1]}>
+                {this.state.project.slice(1, this.state.project.length - 1).map((column, index) => {
                     return (
                         <TaskColumn id={column.id} title={column.title} index={index}>
                             {column.tasks.map((task, index) => {
                                 return (
                                     <Task id={task.id} text={task.title} deadline={task.endTime}
-                                          performers={task.performers} color={task.color} index={index}/>
+                                          performers={task.performers} color={this.getRandomColor()} index={index}/>
                                 )
                             })}
                         </TaskColumn>
@@ -466,13 +475,13 @@ class CurrentProject extends React.Component {
     renderKanban() {
         return (
             <KanbanBoard onDragEnd={this.handleOnDragEnd} id={'board'}>
-                {this.state.columns.map((column, index) => {
+                {this.state.project.map((column, index) => {
                     return (
                         <TaskColumn id={column.id} title={column.title} index={index} openTaskModal={() => this.openModal(null)}>
                             {column.tasks.map((task, index) => {
                                 return (
                                     <Task id={task.id} text={task.title} deadline={task.endTime}
-                                          performers={task.performers} color={task.color} index={index}
+                                          performers={task.performers} color={this.getRandomColor()} index={index}
                                           openTaskModal={() => this.openModal(column.id, task.id)}/>
                                 )
                             })}
@@ -513,8 +522,8 @@ class CurrentProject extends React.Component {
 export default CurrentProject;
 
 
-/*                                    <TaskColumn id={this.state.columns[1].id} title={this.state.columns[1].title}>
-                        {this.state.columns[1].column_tasks.map(({id, name, deadline, performer}, index) => {
+/*                                    <TaskColumn id={this.state.project[1].id} title={this.state.project[1].title}>
+                        {this.state.project[1].column_tasks.map(({id, name, deadline, performer}, index) => {
                             {
                                 return (
                                     <Task id={id} text={name} deadline={deadline} performer={performer}

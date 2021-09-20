@@ -14,7 +14,9 @@ class ProjectCard extends React.Component {
                 <div className="project-card-title">{this.props.project.title}</div>
                 <div className="project-card-item">
                     <div className="project-card-item-title">Описание</div>
-                    <p className="project-card-item-value project-card-item-description">{this.props.project.description}</p>
+                    <p className="project-card-item-value project-card-item-description">
+                        {this.props.project.description ? this.props.project.description : "Без описания"}
+                    </p>
                 </div>
                 <div className="project-card-item">
                     <div className="project-card-item-title">Участники</div>
@@ -22,7 +24,7 @@ class ProjectCard extends React.Component {
                 </div>
                 <div className="project-card-item">
                     <div className="project-card-item-title">Статус</div>
-                    <ProjectStatus isComplete={this.props.project.completed}/>
+                    <ProjectStatus isComplete={this.props.project.state}/>
                 </div>
                 <div className="project-edit" onClick={this.props.onClick}>
                 <EditButton/>

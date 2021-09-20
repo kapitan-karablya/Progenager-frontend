@@ -25,13 +25,13 @@ class Participants extends React.Component {
             <div className="participants">
                 {participants.slice(0, (isAllParticipantsDisplayed ? participants.length : displayedParticipantsCount - 1)).map((participant) => {
                     return (
-                        <Performer performers={participant}/>
+                        <Performer performers={participant} color={this.props.color}/>
                     )
                 })}
                 {!isAllParticipantsDisplayed ?
 
                     <Performer
-                        performers={participants.slice(displayedParticipantsCount - 1, participants.length)}/> : null}
+                        performers={participants.slice(displayedParticipantsCount - 1, participants.length)}  color={this.props.color}/> : null}
             </div>
         )
     }

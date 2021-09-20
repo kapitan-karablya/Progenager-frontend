@@ -31,15 +31,32 @@ class Registration extends React.Component {
     }
 
     handelSubmit(event) {
-        let response = fetch("https://localhost:44317/Users/register?login=" + this.state.login + "&password=" + this.state.password, {
+        let response = fetch("https://localhost:44317/Users/register?login="
+            + this.state.login + "&password=" + this.state.password
+            + "&firstName=" + this.state.firstName + "&lastName="  + this.state.lastName, {
             method: "PUT",
-            body: {
-
-            }
         }).then(response => {
-            console.log(response)
+            if (!response.ok)
+                return console.log("error");
+            response.json().then(json => {
+                this.props.cookies.set('access_token', json);
+                this.props.update();
+            });
+            console.log(response);
+            fetch("https://localhost:44317/Users/Authenticate?login="
+                + this.state.login + "&password=" + this.state.password, {
+                method: "GET",
+            }).then(response => {
+                response.ok ?
+                    response.json().then(json => {
+                        this.props.cookies.set('access_token', json);
+                        this.props.update();
+                    }) : console.log("error");
+            });
+            console.log(response);
         });
-        console.log(response);
+
+
         event.preventDefault();
     }
 

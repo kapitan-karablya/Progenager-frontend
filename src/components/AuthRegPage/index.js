@@ -8,7 +8,6 @@ import Cookies from 'universal-cookie';
 import Loading from "./Loading";
 import xhr from "xhr";
 
-const cookies = new Cookies();
 
 const CLIENT_ID = "4e343cf0194406a5b63c";
 const REDIRECT_URI = "http://localhost:3000/callback";
@@ -64,7 +63,7 @@ class AuthRegPage extends React.Component {
                 <AuthRegHeader isUserRegistered={isUserRegistered} onClick={this.toggleUserStatus}/>
                 {isUserRegistered
                     ? <Authorization update={this.props.update} cookies={this.props.cookies} client_id={CLIENT_ID} redirect_url={REDIRECT_URI}/>
-                    : <Registration  client_id={CLIENT_ID} redirect_url={REDIRECT_URI}/>}
+                    : <Registration  update={this.props.update} cookies={this.props.cookies} client_id={CLIENT_ID} redirect_url={REDIRECT_URI}/>}
                 <AuthRegPageLink onClick={this.toggleUserStatus}
                                  text={isUserRegistered
                                      ? "Ещё нет аккаунта? Зарегестрируйтесь!"

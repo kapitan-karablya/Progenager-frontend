@@ -21,7 +21,7 @@ class UserIcon extends React.Component {
     };
 
     render() {
-        let initialsColor = this.getInitialsColor()
+        let initialsColor = this.getInitialsColor();
         let initials;
         isNaN(this.props.text)
             ? initials = this.props.text.replace(/(.).+ (.).+/, '$1$2')

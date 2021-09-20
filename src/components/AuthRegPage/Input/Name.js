@@ -11,7 +11,7 @@ class InputName extends React.Component {
                     <Input className="first-name-input"
                            type="text"
                            placeholder="Имя"
-                           name="first-name"
+                           name="firstName"
                            value={this.props.firstName}
                            onChange={this.props.onChange}
                     />
@@ -20,7 +20,7 @@ class InputName extends React.Component {
                     <Input className="last-name-input"
                            type="text"
                            placeholder="Фамилия"
-                           name="last-name"
+                           name="lastName"
                            value={this.props.lastName}
                            onChange={this.props.onChange}
                     />

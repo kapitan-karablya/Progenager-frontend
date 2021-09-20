@@ -16,8 +16,6 @@ class Authorization extends React.Component {
         this.state = {
             login: null,
             password: null,
-            client_id: "000",
-            redirect_uri: "jjj",
         };
     }
 
@@ -30,10 +28,11 @@ class Authorization extends React.Component {
             + this.state.login + "&password=" + this.state.password, {
             method: "GET",
         }).then(response => {
+            response.ok ?
             response.json().then(json => {
                 this.props.cookies.set('access_token', json);
                 this.props.update();
-            })
+            }) : console.log("error")
         });
         event.preventDefault();
     }

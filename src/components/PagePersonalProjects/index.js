@@ -178,7 +178,24 @@ class PersonalProjects extends React.Component {
         })
     }
 
-    /*componentDidMount(){
+    componentDidMount(){
+        fetch("https://localhost:44317/users/GetProjects", {
+            method: "GET",
+            headers:  {
+                Authorization: "Bearer " + cookies.get("access_token")["access_token"]
+              }
+        }).then(response => {
+            response.json().then(json => {
+                let projectsList = json.map((object) => {
+                    return object.project;
+                });
+                this.setState({projects: projectsList});
+                console.log(this.state.projects)
+            })
+        });
+    }
+/*
+    getUserProjects(event) {
         let response = fetch("https://localhost:44317/users/GetProjects", {
             method: "GET",
             headers:  {
@@ -192,30 +209,20 @@ class PersonalProjects extends React.Component {
                 });
                 
                 this.setState({projects: projectsList});
-                console.log(this.state.projects)
-            })
-        });
-    }
-
-    getUserProjects(event) {
-        let response = fetch("https://localhost:44317/users/GetProjects", {
-            method: "GET",
-            headers:  {
-                Authorization: "Bearer " + cookies.get("access_token")["access_token"]
-              }
-        }).then(response => {
-            
-            response.json().then(json => {
-                let projectsList = json.map((object) => {
-                    return object.project;
-                })
-                
-                this.setState({projects: projectsList});
                 console.log(this.state.projects);
                 this.render()
             })
         });
     }*/
+
+    getRandomColor() {
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
 
     getProjectData(id) {
         if (this.state.projects)
@@ -235,11 +242,11 @@ class PersonalProjects extends React.Component {
             return this.state.projects.map((project, index) => {
                 return (
                     <ExpandingElement id={project.id} title={project.title} index={index}>
-                        <ListLine onClick={() => this.openModal(project.id)}>
+                        <ListLine id={project.id} onClick={() => this.openModal(project.id)}>
                             <Description description={project.description}/>
                             <Participants
-                                participants={project.members}/>
-                            <ProjectStatusLine isComplete={project.completed}/>
+                                participants={project.members} color={this.getRandomColor()}/>
+                            <ProjectStatusLine isComplete={project.state}/>
                         </ListLine>
                     </ExpandingElement>
                 )
@@ -278,7 +285,7 @@ class PersonalProjects extends React.Component {
                         )}
                 </Board>
                 <ProjectModal project={this.getProjectData(this.state.modalProjectID)}
-                              isOpen={this.state.isProjectModalOpen} onClose={() => this.closeModal()}/>
+                              isOpen={this.state.isProjectModalOpen} onClose={() => this.closeModal()} updateProjects={() => this.componentDidMount()}/>
             </AppPage>
         );
     }
